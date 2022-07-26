@@ -1,0 +1,16 @@
+<div class="panel panel-primary">
+<div class="panel-heading text-center"> Sign up</div>
+ <div class="panel-body">
+ <form [formGroup]="loginForm" (onSubmit)="onLogin()">
+     <input type="text"
+     formControlName="email"
+     placeholder="Enter your email"
+     >
+
+     <input type="text"
+     formControlName="password"
+     placeholder="Enter your password"
+     >
+ </form>
+ </div>
+</div>
