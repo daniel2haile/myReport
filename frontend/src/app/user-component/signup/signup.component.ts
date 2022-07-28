@@ -16,7 +16,9 @@ export class SignupComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
+this.signupForm = this.formBuilder.group({
+  firstname : ['']
+})
   }
 
   onSignup(){
@@ -25,6 +27,7 @@ export class SignupComponent implements OnInit {
     .subscribe((user: any) => {
       this.signupForm = user;
       console.log(user);
+      localStorage.setItem('signup', JSON.stringify(user));
     });
   }
 }

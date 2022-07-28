@@ -4,9 +4,15 @@
   <form [formGroup]="signupForm" (onsubmit)="onSignup()">
     <input type="text"
     formControlName="firstname"
+    placeholder="Enter your firstname"
     >
 
-    <button>send</button>
+
+    <button
+      type="submit"
+          [disabled]="!signupForm.valid"
+          class="btn btn-success btn-lg btn-block"
+    >Sign up</button>
   </form>
  </div>
 </div>
