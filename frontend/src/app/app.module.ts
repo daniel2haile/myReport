@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { FooterComponent } from './shared-component/footer/footer.component';
 import { HeaderComponent } from './shared-component/header/header.componet';
 import { HomeComponent } from './shared-component/home-componet/home.componet';
 import { LoginComponent } from './user-component/login/login.component';
@@ -13,7 +14,14 @@ import { SignupService } from './user-component/signup/signup.service';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SignupComponent, HomeComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    SignupComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     RouterModule,
