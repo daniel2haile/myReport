@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { ReportComponent } from './report-component/report.component';
+import { ReportService } from './report-component/report.service';
 import { FooterComponent } from './shared-component/footer/footer.component';
 import { HeaderComponent } from './shared-component/header/header.componet';
 import { HomeComponent } from './shared-component/home-componet/home.componet';
@@ -21,6 +23,7 @@ import { SignupService } from './user-component/signup/signup.service';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    ReportComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { SignupService } from './user-component/signup/signup.service';
     ReactiveFormsModule,
     AppRoutingModule,
   ],
-  providers: [SignupService],
+  providers: [SignupService, ReportService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
