@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IReport } from './report.model';
 import { ReportService } from './report.service';
@@ -12,35 +13,44 @@ import { ReportService } from './report.service';
 export class ReportComponent implements OnInit, OnDestroy {
   reportForm!: FormGroup;
   subscription!: Subscription;
-  mydata : IReport[] = [];
+  mydata: IReport[] = [];
   constructor(
     private formBuilder: FormBuilder,
-    private reportService: ReportService
-    ) {}
+    private reportService: ReportService,
+    private router : Router
+  ) {}
 
   ngOnInit(): void {
     this.reportForm = this.formBuilder.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
       imageName: ['', Validators.required],
-      images: ['', Validators.required],
+      // images: ['', Validators.required],
       postedBy: ['', Validators.required],
-      createdAt: [Date, Validators.required],
+      // createdAt: [Date, Validators.required],
     });
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+  onReport(reportForm : FormGroup) {
+    console.log('true/false=> this.reportForm.valid', reportForm.valid);
+    if (reportForm.valid) {
+      this.subscription = this.reportService
+        .makeReport(reportForm.value)
+        .subscribe((res) => {
+          console.log('hello', res);
+          localStorage.setItem('report', JSON.stringify(res));
+        });
+    }else{
+      //back to error message
+      console.log(false)
+    }
   }
 
-  onReport(){
-    console.log('true/false=> this.reportForm.valid', this.reportForm.valid);
-   if(this.reportForm.valid){
-   this.subscription =  this.reportService.report(this.reportForm.value)
-    .subscribe((res)=> {
-     console.log('hello',res)
-     localStorage.setItem('report', JSON.stringify(res))
-    })
-   }
+  ngOnDestroy(): void {
+    if (!this.subscription) {
+      return;
+    } else {
+      this.subscription?.unsubscribe();
+    }
   }
 }

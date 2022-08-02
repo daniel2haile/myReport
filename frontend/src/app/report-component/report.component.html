@@ -1,5 +1,5 @@
 <div>
-  <form [formGroup]="reportForm" (ngSubmit)="onReport()">
+  <form [formGroup]="reportForm" (ngSubmit)="onReport(reportForm)">
      <input
      type="text"
      formControlName="title"
@@ -18,17 +18,17 @@
      placeholder="imageName"
      >
 
-      <input
+      <!-- <input
      type="file"
      formControlName="images"
      placeholder="images"
-     >
+     > -->
 
-      <input
+      <!-- <input
      type="date"
      formControlName="createdAt"
      placeholder="createdAt"
-     >
+     > -->
 
       <input
      type="text"

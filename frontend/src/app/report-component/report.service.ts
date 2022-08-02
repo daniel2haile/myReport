@@ -11,7 +11,7 @@ export class ReportService {
 
   constructor( private http : HttpClient){}
 
-  report( report : IReport[]): Observable<IReport[]>{
+  makeReport( report : IReport[]): Observable<IReport[]>{
     return this.http.post<IReport[]>(this.REPORT_URL, report)
   }
 

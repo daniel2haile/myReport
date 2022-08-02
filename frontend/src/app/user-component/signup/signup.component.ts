@@ -1,33 +1,69 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Validators,
+  FormGroup,
+  FormBuilder,
+  // AsyncValidatorFn,
+  // ValidationErrors,
+  // FormControl,
+  // AbstractControl,
+} from '@angular/forms';
+
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { SignupService } from './signup.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnInit, OnDestroy {
   signupForm!: FormGroup;
+  subscription!: Subscription;
 
   constructor(
-    private signupService: SignupService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private service: SignupService,
+    private router: Router
   ) {}
 
   ngOnInit() {
-this.signupForm = this.formBuilder.group({
-  firstname : ['']
-})
+    this.signupForm = this.formBuilder.group({
+      firstname: ['Daniel', Validators.required],
+      lastname: ['Haile', [Validators.required, Validators.minLength(3)]],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^([a-zA-Z0-9]+)@([a-zA-Z0-9]+).([a-zA-Z]{2,5})$'),
+        ],
+      ],
+      password: ['', [Validators.required, Validators.minLength(4)]],
+      phone: ['206-806-3233', Validators.required],
+      role: ['Admin or User', Validators.required],
+    });
   }
 
-  onSignup(){
-  this.signupService
-    .registerUser(this.signupForm.value)
-    .subscribe((user: any) => {
-      this.signupForm = user;
-      console.log(user);
-      localStorage.setItem('signup', JSON.stringify(user));
-    });
+  //Register method
+  onRegister(signupForm: FormGroup) {
+    if (signupForm.valid) {
+      this.subscription = this.service
+        .registerUser(signupForm.value)
+        .subscribe((res) => {
+          localStorage.setItem('STORAGE', JSON.stringify(res));
+          console.log(`get the response`, res);
+          this.router.navigate(['/login']);
+        });
+    } else {
+      this.router.navigate(['/signup']);
+    }
+  }
+
+  ngOnDestroy() {
+    if (!this.subscription) {
+      return;
+    } else {
+      this.subscription.unsubscribe();
+    }
   }
 }
