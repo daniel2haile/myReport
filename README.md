@@ -1,3 +1,5 @@
 
 - About this project
-     - School website 
+     - posts daily report 
+     - upload pictures 
+     => Technologies : Angular, NodeJS, TypeScript, Express, mongoose
