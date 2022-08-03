@@ -12,7 +12,7 @@ export class SignupService {
     return this.http.post<ISignup[]>(this.REGISTER_URL, user);
   }
 
-  loggedIn() {
+  isSignedup() {
     return !!localStorage.getItem('token');
   }
 }

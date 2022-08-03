@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/user-component/login/loginform.service';
+import { SignupService } from 'src/app/user-component/signup/signup.service';
 
 
 @Component({
@@ -9,7 +11,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
 
-     constructor(){}
+     constructor(
+      public loginService: LoginService,
+      public signupService: SignupService
+      ){}
 
   ngOnInit(): void {
 

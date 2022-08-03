@@ -10,9 +10,10 @@ const UserSchema = mongoose.Schema({
   profile_pic: { type: String },
   current_city: { type: String, required: true },
   phone: { type: String },
-  email: { type: String, required: true },
+  email: { type: String, required: true, unique: true},
   password: { type: String, required: true },
-  role: { type: String, required: true },
+  role: { type: String, required: true, unique: 'Admin' },
 });
+
 
 module.exports = mongoose.model("user", UserSchema);

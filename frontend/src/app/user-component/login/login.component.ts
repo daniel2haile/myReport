@@ -30,10 +30,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: [
+      email: [, [
           Validators.required,
           Validators.pattern('^([a-zA-Z0-9]+)@([a-zA-Z0-9]+).([a-zA-Z]{2,3})$'),
-        ],
+        ]],
 
       password: ['', Validators.required],
     });
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           localStorage.setItem('status', JSON.stringify(res.status));
           localStorage.setItem('token', JSON.stringify(res.token));
           this.loginError = '';
-          this.router.navigate(['/product-list']);
+          this.router.navigate(['/report']);
         } else {
           this.loginError = 'Invalid password and email!!';
         }

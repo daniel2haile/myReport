@@ -6,15 +6,15 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li>
-          <a [routerLink]="['/home']"
-            ><span class="glyphicon glyphicon"></span>About</a
+          <a [routerLink]="['/report']"
+            ><span class="glyphicon glyphicon"></span>REPORT</a
           >
         </li>
       </ul>
-      <!-- <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
         <li>
           <a
-            [routerLink]="['/signup']"
+ [routerLink]="['/login']"
             *ngIf="!loginService.isLoggedIn()"
             routerLinkActive="active"
             ><span class="glyphicon glyphicon-user"></span> Sign Up</a
@@ -39,7 +39,7 @@
             Logout</a
           >
         </li>
-      </ul> -->
+      </ul>
     </div>
   </div>
 </nav>
