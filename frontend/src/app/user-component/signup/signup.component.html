@@ -150,13 +150,16 @@
                                                         !signupForm.get('role')?.valid}">
         <div class="col-md-12">
            <label class="control-label" for="role"> Role</label>&nbsp;
-          <input
-            class="form-control"
-            type="tel"
-            id="phone"
-            placeholder="Enter your Role"
-            formControlName="role"
-          />
+          <select formControlName="role" id="role" class="form-control">
+            <option disabled>Choose role</option>
+            <option value="role">User</option>
+            <option disabled>Admin [taken]</option>
+          </select>
+
+  <!-- <div *ngIf="signupForm.get('role')?.errors && (signupForm.get('role')?.dirty || signupForm.get('role')?.touched)">
+        <span *ngIf="signupForm.get('role')?.errors?.['required']" class="form-control__msg-txt">Role required</span>
+    </div> -->
+
 
            <div class="help-block" *ngIf="signupForm.get('role')?.touched ||
                                         signupForm.get('role')?.dirty &&
@@ -165,9 +168,7 @@
           <span *ngIf="signupForm.get('role')?.errors?.['required']">
            Role required
           </span>
-
           </div>
-
         </div>
       </div>
 
@@ -184,3 +185,6 @@
     </form>
   </div>
 </div>
+
+  <p>Already you have an account? <span> <a [routerLink]="['/login']">Please click here to sign in.</a> </span>
+    </p>

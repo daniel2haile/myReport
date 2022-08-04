@@ -1,0 +1,53 @@
+
+<!-- backups for: header html component  -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">DANNY</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li>
+          <a [routerLink]="['/report']"
+            ><span class="glyphicon glyphicon"></span>REPORT</a
+          >
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a
+            [routerLink]="['/login']"
+            *ngIf="!loginService.isLoggedIn()"
+            routerLinkActive="active"
+            ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/login']"
+            *ngIf="!loginService.isLoggedIn()"
+            routerLinkActive="active"
+            ><span class="glyphicon glyphicon-log-in"></span> Login</a
+          >
+        </li>
+
+        <li>
+          <a
+            class="nav-link"
+            style="cursor: pointer"
+            *ngIf="loginService.isLoggedIn()"
+            (click)="loginService.logout()"
+          >
+            Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- backups for:  -->
+ #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%

@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit, OnDestroy {
       ],
       password: ['', [Validators.required, Validators.minLength(4)]],
       phone: ['206-806-3233', Validators.required],
-      role: ['Admin or User', Validators.required],
+      role: ['', Validators.required],
     });
   }
 
