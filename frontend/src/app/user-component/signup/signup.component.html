@@ -33,6 +33,33 @@
         </div>
       </div>
 
+
+      <!-- Middle Name -->
+       <div class="form-group" [ngClass]="{'has-error': (signupForm.get('middlename')?.touched ||
+                                                        signupForm.get('middlename')?.dirty) &&
+                                                        !signupForm.get('middlename')?.valid}">
+        <div class="col-md-12">
+          <label class="control-label" for="lname"> Middle Name</label>
+          <input
+            class="form-control"
+            type="text"
+            id="lname"
+            placeholder="Enter Middle Name"
+            formControlName="middlename"
+          />
+          <div class="help-block" *ngIf="signupForm.get('middlename')?.touched ||
+                                        signupForm.get('middlename')?.dirty &&
+                                        signupForm.get('middlename')?.errors"
+          >
+          <span *ngIf="signupForm.get('middlename')?.errors?.['required']">
+            Middle Name required
+          </span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Last Name -->
       <div class="form-group" [ngClass]="{'has-error': (signupForm.get('lastname')?.touched ||
                                                         signupForm.get('lastname')?.dirty) &&
                                                         !signupForm.get('lastname')?.valid}">
@@ -57,6 +84,31 @@
         </div>
       </div>
 
+      <!-- Current City -->
+           <div class="form-group" [ngClass]="{'has-error': (signupForm.get('current_city')?.touched ||
+                                                        signupForm.get('current_city')?.dirty) &&
+                                                        !signupForm.get('current_city')?.valid}">
+        <div class="col-md-12">
+          <label class="control-label" for="current_city"> Current City</label>
+          <input
+            class="form-control"
+            type="text"
+            id="current_city"
+            placeholder="Enter Current City"
+            formControlName="current_city"
+          />
+          <div class="help-block" *ngIf="signupForm.get('current_city')?.touched ||
+                                        signupForm.get('current_city')?.dirty &&
+                                        signupForm.get('current_city')?.errors"
+          >
+          <span *ngIf="signupForm.get('current_city')?.errors?.['required']">
+            Current City required
+          </span>
+          </div>
+
+        </div>
+      </div>
+      <!-- Email -->
       <div class="form-group" [ngClass]="{'has-error': (signupForm.get('email')?.touched ||
                                                         signupForm.get('email')?.dirty) &&
                                                         !signupForm.get('email')?.valid}">
@@ -86,6 +138,7 @@
         </div>
       </div>
 
+      <!-- Password -->
       <div class="form-group" [ngClass]="{'has-error': (signupForm.get('password')?.touched ||
                                                         signupForm.get('password')?.dirty) &&
                                                         !signupForm.get('password')?.valid}">
@@ -117,6 +170,7 @@
         </div>
       </div>
 
+      <!--  Phone -->
       <div class="form-group" [ngClass]="{'has-error': (signupForm.get('phone')?.touched ||
                                                         signupForm.get('phone')?.dirty) &&
                                                         !signupForm.get('phone')?.valid}">
@@ -156,11 +210,6 @@
             <option disabled>Admin [taken]</option>
           </select>
 
-  <!-- <div *ngIf="signupForm.get('role')?.errors && (signupForm.get('role')?.dirty || signupForm.get('role')?.touched)">
-        <span *ngIf="signupForm.get('role')?.errors?.['required']" class="form-control__msg-txt">Role required</span>
-    </div> -->
-
-
            <div class="help-block" *ngIf="signupForm.get('role')?.touched ||
                                         signupForm.get('role')?.dirty &&
                                         signupForm.get('role')?.errors"
@@ -188,3 +237,15 @@
 
   <p>Already have an account? <span> <a [routerLink]="['/login']">Please click here to sign in.</a> </span>
     </p>
+
+
+    <!-- export interface IProfile {
+  firstname: string;
+  middlename: string;
+  lastname: string;
+  current_city: string
+  phone: string;
+  email: string;
+  password: string;
+  role: string;
+} -->

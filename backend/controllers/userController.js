@@ -76,9 +76,27 @@ exports.login = async (req, res) => {
     } else {
       res.json({ status: "Invalid email or password" });
     }
-
   } catch (err) {
     console.log("Catch Error: ", err);
     res.json({ status: "Error...", message: err.message });
+  }
+};
+
+exports.getAllUsers = async (req, res) => {
+  const users = await UserModel.find({});
+
+  try {
+    res.json({ status: "success", users: users });
+  } catch (err) {
+    res.json({ status: "Error", message: err.message });
+  }
+};
+
+exports.findUserById = async (req, res) => {
+  try {
+    const user = await UserModel.findOne({ _id: req.params.id });
+    res.json({ status: "success", user: user });
+  } catch (err) {
+    res.json({ status: "Error", message: err.message });
   }
 };

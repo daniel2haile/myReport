@@ -29,8 +29,10 @@ export class SignupComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      firstname: ['Daniel', Validators.required],
-      lastname: ['Haile', [Validators.required, Validators.minLength(3)]],
+      firstname: ['', Validators.required],
+      middlename: ['', Validators.required],
+      lastname: ['', Validators.required],
+      current_city: ['', Validators.required],
       email: [
         '',
         [
