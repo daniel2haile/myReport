@@ -1,48 +1,28 @@
 <div>
   <form [formGroup]="reportForm" (ngSubmit)="onReport(reportForm)">
-     <input
-     type="text"
-     formControlName="title"
-     placeholder="title"
-     >
+    <input type="text" formControlName="title" placeholder="title" />
 
-      <input
-     type="text"
-     formControlName="description"
-     placeholder="description"
-     >
+    <input
+      type="text"
+      formControlName="description"
+      placeholder="description"
+    />
 
-      <input
-     type="text"
-     formControlName="imageName"
-     placeholder="imageName"
-     >
+    <input type="text" formControlName="imageName" placeholder="imageName" />
 
-      <!-- <input
-     type="file"
-     formControlName="images"
-     placeholder="images"
-     > -->
+    <!-- <input type="file" (change)="uploadFile($event)"> -->
+    <input
+      type="file"
+      formControlName="imageUrl"
+      placeholder="upload image..."
+    />
 
-      <!-- <input
-     type="date"
-     formControlName="createdAt"
-     placeholder="createdAt"
-     > -->
+    <input type="date" formControlName="createdAt" placeholder="createdAt" />
 
-      <input
-     type="text"
-     formControlName="postedBy"
-     placeholder="postedBy"
-     >
+    <input type="text" formControlName="postedBy" placeholder="postedBy" />
 
-     <button>Submit</button>
+    <button>Submit</button>
   </form>
 </div>
 
-<hr>
-
-
-
-
-
+<hr />

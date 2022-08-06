@@ -1,10 +1,13 @@
 <h1 *ngFor="let data of profileData">Hi there, {{data.firstname}} from profile component.... Test</h1>
 
+<hr>
+
 <div>
   <h2>Reports test</h2>
   <h3 *ngFor="let data of reportData">
     Title : {{data.title}}
+    imageName : {{data.imageName}}
      Description : {{data.description}}
-     images:  <Img [src]="data.images" />
+     images:  <Img [src]="data.imageUrl" />
   </h3>
 </div>

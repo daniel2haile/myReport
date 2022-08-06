@@ -2,7 +2,7 @@ export interface IReport {
   title: string;
   description: string;
   imageName: string;
-  images: string;
+  imageUrl: string;
   createdAt: Date;
   postedBy: string;
 }

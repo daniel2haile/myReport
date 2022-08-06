@@ -13,10 +13,22 @@ const PORT = 8088;
 initiateMyMongoServer();
 app.use(cors());
 app.use(express.json());
-app.use('/uploads/photos', express.static(path.join(__dirname, 'uploads'))) //file
+app.use('/uploads', express.static('uploads')) //file
 
 app.use('/user', userRoutes);
 app.use("/report", reportRoutes);
-//Error handler
+
+// Error
+// app.use((req, res, next) => {
+//   // Error goes via `next()` method
+//   setImmediate(() => {
+//     next(new Error('Something went wrong'))
+//   })
+// })
+// app.use( (err, req, res, next) =>{
+//   console.error(err.message)
+//   if (!err.statusCode) err.statusCode = 500
+//   res.status(err.statusCode).send(err.message)
+// })
 
 app.listen(PORT, ()=> console.log('listening on port ', PORT));

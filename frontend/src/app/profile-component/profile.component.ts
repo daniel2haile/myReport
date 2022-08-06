@@ -19,16 +19,18 @@ export class ProfileComponent implements OnInit, OnDestroy {
     ){}
 
   ngOnInit(): void {
-     this.profileService.getProfile().subscribe((res : any)=>{
-      this.profileData = res.users
 
-      console.log(this.profileData)
-    })
+    // subscribe for profile service
+    this.profileService.getProfile().subscribe((res: any) => {
+      this.profileData = res.users;
+      console.log('response for user: ', res.users);
+    });
 
-    this.reportService.getReports().subscribe((response : any)=>{
-      console.log('report', response)
-       this.reportData = response.data
-    })
+    // subscribe for report service
+    this.reportService.getReports().subscribe((response: any) => {
+      console.log('report response: ', response);
+      this.reportData = response.data;
+    });
   }
 
 

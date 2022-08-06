@@ -4,7 +4,7 @@ const path = require("path");
 
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
-    callback(null, "uploads/photos");
+    callback(null, "./uploads/");
   },
 
   filename: function (req, file, cb) {
@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
       .toLowerCase()
       .split(" ")
       .join("_");
-    cb(null, new Date().toISOString() + name);
+    cb(null, Date.now() + name);
    
   },
 
@@ -22,12 +22,12 @@ const storage = multer.diskStorage({
 //DONE
 var upload = multer({
   storage: storage,
-  limits: { fileSize: 1024 * 1024 * 5}, // 1024 * 1024 is 1MB * 5 = 5MB
-}).single("images");
+  limits: { fileSize: 1024 * 1024 * 5},
+}).single("image");
 
 // var multipleUpload = multer({ storage: storage }).array("files");
 
-exports.createReport = async (req, res) => {
+exports.createReport =  (req, res) => {
 
   upload(req, res, function (err) {
 
@@ -38,20 +38,16 @@ exports.createReport = async (req, res) => {
       res.json({ status: err.message });
     } else {
 
-      // const url = req.protocol + "://" + req.get("host");
+      const url = req.protocol + "://" + req.get("host");
       const newReport = new ReportModel({
         title: req.body.title,
         description: req.body.description,
         imageName: req.body.imageName,
-        // images: {
-        //     data: JSON.stringify(req.file),
-        //     contentType: "image/png" || "image/jpeg" || "image/jpg",
-        // },
-        // images : url + '/uploads/photos/' + req.file.filename,
-        images : req.file.path,
+        imageUrl : url + "/" + req.file.path,
         createdAt: Date.now(),
         postedBy: req.body.postedBy,
       });
+      
 
       console.log("Test", newReport);
 

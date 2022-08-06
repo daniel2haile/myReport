@@ -25,9 +25,9 @@ export class ReportComponent implements OnInit, OnDestroy {
       title: ['', Validators.required],
       description: ['', Validators.required],
       imageName: ['', Validators.required],
-      // images: ['', Validators.required],
+      imageUrl: ['', Validators.required],
       postedBy: ['', Validators.required],
-      // createdAt: [Date, Validators.required],
+      createdAt: [Date, Validators.required],
     });
   }
 
@@ -35,14 +35,14 @@ export class ReportComponent implements OnInit, OnDestroy {
     console.log('true/false=> this.reportForm.valid', reportForm.valid);
     if (reportForm.valid) {
       this.subscription = this.reportService
-        .makeReport(reportForm.value)
+        .createReport(reportForm.value)
         .subscribe((res) => {
           console.log('hello', res);
           localStorage.setItem('report', JSON.stringify(res));
         });
     }else{
       //back to error message
-      console.log(false)
+      console.log('ERROR')
     }
   }
 
