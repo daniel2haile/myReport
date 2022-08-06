@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
       .toLowerCase()
       .split(" ")
       .join("_");
-    cb(null, Date.now() + name);
+    cb(null, new Date().toISOString() + name);
    
   },
 
@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 //DONE
 var upload = multer({
   storage: storage,
-  limits: { fileSize: 2000000 },
+  limits: { fileSize: 1024 * 1024 * 5}, // 1024 * 1024 is 1MB * 5 = 5MB
 }).single("images");
 
 // var multipleUpload = multer({ storage: storage }).array("files");
@@ -38,7 +38,7 @@ exports.createReport = async (req, res) => {
       res.json({ status: err.message });
     } else {
 
-      const url = req.protocol + "://" + req.get("host");
+      // const url = req.protocol + "://" + req.get("host");
       const newReport = new ReportModel({
         title: req.body.title,
         description: req.body.description,
@@ -47,8 +47,8 @@ exports.createReport = async (req, res) => {
         //     data: JSON.stringify(req.file),
         //     contentType: "image/png" || "image/jpeg" || "image/jpg",
         // },
-        images : url + '/uploads/photos/' + req.file.filename,
-
+        // images : url + '/uploads/photos/' + req.file.filename,
+        images : req.file.path,
         createdAt: Date.now(),
         postedBy: req.body.postedBy,
       });

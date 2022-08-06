@@ -13,10 +13,10 @@ const PORT = 8088;
 initiateMyMongoServer();
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'uploads'))) //file
+app.use('/uploads/photos', express.static(path.join(__dirname, 'uploads'))) //file
 
 app.use('/user', userRoutes);
-app.use("/images", reportRoutes);
+app.use("/report", reportRoutes);
 //Error handler
 
 app.listen(PORT, ()=> console.log('listening on port ', PORT));
