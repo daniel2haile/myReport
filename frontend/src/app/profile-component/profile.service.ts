@@ -13,7 +13,7 @@ export class ProfileService {
     return this.http.get<IProfile>(this._PROFILE_URL);
   }
 
-  // getProfileById(obj: IProfile[]): Observable<IProfile[]> {
-  //   return this.http.post<IProfile[]>(this._PROFILE_URL, obj);
-  // }
+  getUsereById(user_id : string): Observable<IProfile[]> {
+    return this.http.get<IProfile[]>(`${this._PROFILE_URL}/ ${user_id}`);
+  }
 }

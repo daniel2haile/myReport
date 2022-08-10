@@ -5,7 +5,7 @@ import { IReport } from './report.model';
 
 @Injectable()
 export class ReportService {
-  private REPORT_URL = 'http://localhost:8088/images';
+  private REPORT_URL = 'http://localhost:8088/report';
 
   constructor(private http: HttpClient) {}
 

@@ -94,7 +94,8 @@ exports.getAllUsers = async (req, res) => {
 
 exports.findUserById = async (req, res) => {
   try {
-    const user = await UserModel.findOne({ _id: req.params.id });
+    const user = await UserModel.findOne({ _id: req.params.user_id });
+    console.log('userrrr', user);
     res.json({ status: "success", user: user });
   } catch (err) {
     res.json({ status: "Error", message: err.message });

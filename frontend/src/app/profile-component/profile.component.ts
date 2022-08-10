@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router';
 import { ReportService } from '../report-component/report.service';
 import { ProfileService } from './profile.service';
 
@@ -15,13 +16,17 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   constructor(
     private profileService: ProfileService,
-    private reportService :ReportService
+    private reportService :ReportService,
+    private activatedRoute: ActivatedRoute
     ){}
 
   ngOnInit(): void {
-
     // subscribe for profile service
-    this.profileService.getProfile().subscribe((res: any) => {
+    // const user_id = this.activatedRoute.snapshot.params['user_id'];
+        const user_id: any | null =
+          this.activatedRoute.snapshot.paramMap.get('user_id');
+
+    this.profileService.getUsereById(user_id).subscribe((res: any) => {
       this.profileData = res.users;
       console.log('response for user: ', res.users);
     });
