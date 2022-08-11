@@ -95,8 +95,28 @@ exports.getAllUsers = async (req, res) => {
 exports.findUserById = async (req, res) => {
   try {
     const user = await UserModel.findOne({ _id: req.params.user_id });
-    console.log('userrrr', user);
+    console.log("userrrr", user);
     res.json({ status: "success", user: user });
+  } catch (err) {
+    res.json({ status: "Error", message: err.message });
+  }
+};
+
+exports.editUserById = async (req, res) => {};
+
+exports.deleteUserById = async (req, res) => {
+  try {
+    await UserModel.deleteOne({ _id: req.params.user_id });
+    res.json({ status: "success", message: "user is successfylly deleted!" });
+  } catch (err) {
+    res.json({ status: "Error", message: err.message });
+  }
+};
+
+exports.deleteAllUsers = async (req, res) => {
+  try {
+    await UserModel.deleteMany({});
+    res.json({ status: "success", message: "Users are successfully deleted!" });
   } catch (err) {
     res.json({ status: "Error", message: err.message });
   }
