@@ -1,4 +1,4 @@
-
+/** 
 <!-- backups for: header html component  -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -229,3 +229,34 @@ export class ReportService {
   // postedBy: string;
 
 
+/**
+ * pipeline {
+
+    agent any
+
+    stages {
+
+        stage("build"){
+           steps {
+            //changes
+           }
+        }
+        stage("test"){
+            when {
+              expression {
+                  // TODO:
+              }
+            }
+            steps{
+
+            }
+
+        }
+        stage("deploy"){
+         steps {
+
+         }
+        }
+    }
+}
+ */

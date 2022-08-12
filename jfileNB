@@ -1,29 +1,29 @@
-pipeline {
+// pipeline {
 
-    agent any
+//     agent any
 
-    stages {
+//     stages {
 
-        stage("build"){
-           steps {
-            //changes
-           }
-        }
-        stage("test"){
-            when {
-              expression {
-                  // TODO:
-              }
-            }
-            steps{
+//         stage("build"){
+//            steps {
+//             //changes
+//            }
+//         }
+//         stage("test"){
+//             when {
+//               expression {
+//                   // TODO:
+//               }
+//             }
+//             steps{
 
-            }
+//             }
 
-        }
-        stage("deploy"){
-         steps {
+//         }
+//         stage("deploy"){
+//          steps {
 
-         }
-        }
-    }
-}
+//          }
+//         }
+//     }
+// }
