@@ -9,12 +9,12 @@ pipeline{
         }
         stage("Build"){
             steps{
-                sh "npm build"
+                sh "ng build"
             }
         }
         stage("Deploy"){
             steps{
-                sh "main restart all"
+                sh "mv dist/dannyApp/* /var/www/html"
             }
         }
     }
