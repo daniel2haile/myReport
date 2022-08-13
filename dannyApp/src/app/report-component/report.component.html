@@ -1,28 +1,226 @@
-<div>
-  <form [formGroup]="reportForm" (ngSubmit)="onReport(reportForm)">
-    <input type="text" formControlName="title" placeholder="title" />
+<div class="panel panel-primary">
+  <div class="panel-heading text-center">Post Report</div>
+  <div class="panel-body">
+    <form
+      [formGroup]="reportForm"
+      (ngSubmit)="onReport(reportForm)"
+      class="form-horizontal"
+    >
+      <!-- Title -->
 
-    <input
-      type="text"
-      formControlName="description"
-      placeholder="description"
-    />
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error':
+            (reportForm.get('title')?.touched ||
+              reportForm.get('title')?.dirty) &&
+            !reportForm.get('title')?.valid
+        }"
+      >
+        <div class="col-md-12">
+          <label class="control-label" for="title"> Title</label>
+          <input
+            class="form-control"
+            type="text"
+            id="title"
+            placeholder="Enter Title"
+            formControlName="title"
+          />
 
-    <input type="text" formControlName="imageName" placeholder="imageName" />
+          <div
+            class="help-block"
+            *ngIf="
+              reportForm.get('title')?.touched ||
+              (reportForm.get('title')?.dirty &&
+                reportForm.get('title')?.errors)
+            "
+          >
+            <span *ngIf="reportForm.get('title')?.errors?.['required']">
+              Title required
+            </span>
+          </div>
+        </div>
+      </div>
 
-    <!-- <input type="file" (change)="uploadFile($event)"> -->
-    <input
-      type="file"
-      formControlName="imageUrl"
-      placeholder="upload image..."
-    />
+      <!-- image name-->
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error':
+            (reportForm.get('imageName')?.touched ||
+              reportForm.get('imageName')?.dirty) &&
+            !reportForm.get('imageName')?.valid
+        }"
+      >
+        <div class="col-md-12">
+          <label class="control-label" for="imageName"> Image Name</label>
+          <input
+            class="form-control"
+            type="text"
+            id="imageName"
+            placeholder="Enter Image Name"
+            formControlName="imageName"
+          />
 
-    <input type="date" formControlName="createdAt" placeholder="createdAt" />
+          <div
+            class="help-block"
+            *ngIf="
+              reportForm.get('imageName')?.touched ||
+              (reportForm.get('imageName')?.dirty &&
+                reportForm.get('imageName')?.errors)
+            "
+          >
+            <span *ngIf="reportForm.get('imageName')?.errors?.['required']">
+              Image Name required
+            </span>
+          </div>
+        </div>
+      </div>
 
-    <input type="text" formControlName="postedBy" placeholder="postedBy" />
+      <!-- Image uppload -->
 
-    <button>Submit</button>
-  </form>
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error':
+            (reportForm.get('imageUrl')?.touched ||
+              reportForm.get('imageUrl')?.dirty) &&
+            !reportForm.get('imageUrl')?.valid
+        }"
+      >
+        <div class="col-md-12">
+          <label class="control-label" for="imageUrl"> Browse Image</label>
+          <input
+            class="form-control"
+            type="file"
+            id="imageUrl"
+            placeholder="upload image..."
+            formControlName="imageUrl"
+          />
+
+          <div
+            class="help-block"
+            *ngIf="
+              reportForm.get('imageUrl')?.touched ||
+              (reportForm.get('imageUrl')?.dirty &&
+                reportForm.get('imageUrl')?.errors)
+            "
+          >
+            <span *ngIf="reportForm.get('imageUrl')?.errors?.['required']">
+              Image required
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- date -->
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error':
+            (reportForm.get('createdAt')?.touched ||
+              reportForm.get('createdAt')?.dirty) &&
+            !reportForm.get('createdAt')?.valid
+        }"
+      >
+        <div class="col-md-12">
+          <label class="control-label" for="createdAt"> Post Date</label>
+          <input
+            class="form-control"
+            type="date"
+            id="createdAt"
+            placeholder="Enter date"
+            formControlName="createdAt"
+          />
+
+          <div
+            class="help-block"
+            *ngIf="
+              reportForm.get('createdAt')?.touched ||
+              (reportForm.get('createdAt')?.dirty &&
+                reportForm.get('createdAt')?.errors)
+            "
+          >
+            <span *ngIf="reportForm.get('createdAt')?.errors?.['required']">
+              Date is required
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Posted By -->
+
+
+       <div
+        class="form-group"
+        [ngClass]="{
+          'has-error':
+            (reportForm.get('postedBy')?.touched ||
+              reportForm.get('postedBy')?.dirty) &&
+            !reportForm.get('postedBy')?.valid
+        }"
+      >
+        <div class="col-md-12">
+          <label class="control-label" for="postedBy"> Posted by</label>
+          <input
+            class="form-control"
+            type="text"
+            id="postedBy"
+            placeholder="Enter your name..."
+            formControlName="postedBy"
+          />
+
+          <div
+            class="help-block"
+            *ngIf="
+              reportForm.get('postedBy')?.touched ||
+              (reportForm.get('postedBy')?.dirty &&
+                reportForm.get('postedBy')?.errors)
+            "
+          >
+            <span *ngIf="reportForm.get('postedBy')?.errors?.['required']">
+              Your Name is required
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error':
+            (reportForm.get('description')?.touched ||
+              reportForm.get('description')?.dirty) &&
+            !reportForm.get('description')?.valid
+        }"
+      >
+        <div class="col-md-12">
+          <label class="control-label" for="description"> Description</label>
+          <textarea
+            class="form-control"
+            type="text"
+            id="description"
+            placeholder="Enter Description"
+            formControlName="description"
+          ></textarea>
+
+          <div
+            class="help-block"
+            *ngIf="
+              reportForm.get('description')?.touched ||
+              (reportForm.get('description')?.dirty &&
+                reportForm.get('description')?.errors)
+            "
+          >
+            <span *ngIf="reportForm.get('description')?.errors?.['required']">
+              Description required
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-danger btn-block btn-lg">Submit Report</button>
+    </form>
+  </div>
 </div>
-
-<hr />

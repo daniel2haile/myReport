@@ -1,4 +1,4 @@
-<!-- <div id="app">
+<div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <h2 class="animate-charcter text-center" *ngFor="let data of profileData">Welcome - {{data.firstname}}</h2><br/>
       <li class="nav-item">
@@ -17,11 +17,11 @@
      Description : {{data.description}}
      images:  <Img [src]="data.imageUrl" />
   </h3>
-</div> -->
+</div>
 
 <hr >
 <div class="panel panel-primary">
-  <div class="panel-heading text-center" *ngFor="let user of profileData"><h3>Welcome, {{user.firstname}} !!</h3></div>
+  <!-- <div class="panel-heading text-center" *ngFor="let user of profileData"><h3>Welcome, {{user.firstname}} !!</h3></div> -->
 
   <div class="panel-body">
   <h1 *ngFor="let user of reportData">{{user.createdAt | date}}</h1>
