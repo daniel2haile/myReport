@@ -94,8 +94,16 @@ exports.getAllUsers = async (req, res) => {
 };
 
 exports.getUserById = async (req, res) => {
+  /**
+   * NOTE!
+   * 
+   * ERROR!
+   * BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+   * 
+   * SOLUTION : USE trim()  as the following
+   */
   try {
-    const user = await UserModel.findByIdAndUpdate({ _id: req.params.user_id });
+    const user = await UserModel.findByIdAndUpdate({ _id: req.params.user_id.trim() });
     console.log("userrrr", user);
     res.json({ status: "success", user: user });
   } catch (err) {
@@ -103,6 +111,19 @@ exports.getUserById = async (req, res) => {
     res.json({ status: "Error", message: err.message });
   }
 };
+
+// exports.getUserById = async (req, res) => {
+//   try {
+//     const { user_id } = req.params;
+
+//     const user = await UserModel.getUserById(user_id);
+//     res.json({ status: "success", user: user });
+//   } catch (err) {
+//     console.log("Error...", err);
+//     res.json({ status: "Error", message: err.message });
+//   }
+// };
+
 
 exports.editUserById = async (req, res) => {};
 

@@ -11,7 +11,7 @@ import { ProfileService } from './profile.service';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit, OnDestroy {
-  profileData: any;
+  profileData!: IProfile;
   reportData!: any;
   user_id!: any;
 
@@ -39,13 +39,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
   userDetails(): void {
     //get the user id
     this.user_id = this.activatedRoute.snapshot.paramMap.get('user_id');
-       this.profileService
-      .getUsereById(this.user_id)
-      .subscribe((res: any) => {
-        this.profileData = res.user;
-        console.log('response for user: ', res.user);
-        console.log('user_id', this.user_id);
-      });
+    this.profileService.getUsereById(this.user_id).subscribe((res: any) => {
+      this.profileData = res.user;
+      console.log('response for user: ', res.user);
+      console.log('user_id', this.user_id);
+    });
   }
 
   ngOnDestroy() {

@@ -8,23 +8,36 @@
 
 
 
-<!-- <div>
-  <h2>Reports test</h2>
+<div>
+  <!-- <h2>Reports test</h2> -->
   <h3 *ngFor="let data of reportData">
-    Date : {{data.createdAt | date}}
+    <!-- Date : {{data.createdAt | date}}
     Title : {{data.title}}
     imageName : {{data.imageName}}
-     Description : {{data.description}}
-     images:  <Img [src]="data.imageUrl" />
+     Description : {{data.description}} -->
+     <!-- images:  <Img [src]="data.imageUrl" /> -->
   </h3>
-</div> -->
+</div>
 
 <hr >
 <div class="panel panel-primary">
-  <!-- <div class="panel-heading text-center" *ngFor="let user of profileData"><h3>Welcome, {{user.firstname}} !!</h3></div> -->
 <div class="panel-heading text-center">Profile Details</div>
-  <div class="panel-body" *ngFor="let user of profileData">
-  <!-- <h1 *ngFor="let user of reportData">{{user.createdAt | date}}</h1> -->
-First name: {{user.firstname}}
+  <div class="panel-body">
+
+      <h3 *ngFor="let data of reportData" class="text-center">
+        <Img [src]="data.imageUrl" /> <br />
+      </h3>
+
+   <h2 class="text-center">Welcome (እንኳን ደህና መጡ), {{profileData.firstname}} !!!</h2>
+   <hr />
+  ID: {{profileData._id}} <br />
+  First Name: {{profileData.firstname}} <br />
+  Middle Name: {{profileData.middlename}} <br />
+  Last Name: {{profileData.lastname}} <br />
+  Current City: {{profileData.current_city}} <br />
+  Phone: {{profileData.phone}} <br />
+  Role: {{profileData.role}} <br />
+  Email: {{profileData.email}}
+
 </div>
 </div>

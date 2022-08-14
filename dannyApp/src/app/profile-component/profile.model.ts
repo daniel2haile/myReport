@@ -3,6 +3,7 @@ export interface IProfile {
   firstname: string;
   middlename: string;
   lastname: string;
+  age : number;
   current_city: string
   phone: string;
   email: string;
