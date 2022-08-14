@@ -2,6 +2,7 @@ const UserModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+// const { ObjectId } = require("mongodb");
 
 exports.register = async (req, res, next) => {
   try {
@@ -92,12 +93,13 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
-exports.findUserById = async (req, res) => {
+exports.getUserById = async (req, res) => {
   try {
-    const user = await UserModel.findOne({ _id: req.params.user_id });
+    const user = await UserModel.findByIdAndUpdate({ _id: req.params.user_id });
     console.log("userrrr", user);
     res.json({ status: "success", user: user });
   } catch (err) {
+    console.log("Error...", err);
     res.json({ status: "Error", message: err.message });
   }
 };

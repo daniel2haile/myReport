@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           localStorage.setItem('status', JSON.stringify(res.status));
           localStorage.setItem('token', JSON.stringify(res.token));
           this.loginError = '';
-          this.router.navigate(['/profile']);
+          this.router.navigate(['/report']);
         } else {
           this.loginError = 'Invalid password and email!!';
         }

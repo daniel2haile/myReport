@@ -12,4 +12,5 @@ const ReportSchema = new Schema({
   postedBy: { type: String, required: true },
 });
 
+
 module.exports = mongoose.model("report", ReportSchema);

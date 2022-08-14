@@ -1,0 +1,11 @@
+<div class="panel panel-primary">
+  <div class="panel-heading text-center">Users List</div>
+  <div class="panel-body"
+      *ngFor="let user of userslist">{{user.firstname}}
+      <br>
+     {{user.role}}
+     <br>
+     {{user.current_city}}
+     <a [routerLink]="['/profile', user._id]"> user details</a>
+  </div>
+</div>

@@ -47,7 +47,7 @@ exports.createReport =  (req, res) => {
         createdAt: Date.now(),
         postedBy: req.body.postedBy,
       });
-      
+    
 
       console.log("Test", newReport);
 

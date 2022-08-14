@@ -39,6 +39,7 @@ export class ReportComponent implements OnInit, OnDestroy {
         .subscribe((res) => {
           console.log('hello', res);
           localStorage.setItem('report', JSON.stringify(res));
+          // this.router.navigate(['/profile']);
         });
     }else{
       //back to error message
