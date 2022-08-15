@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { map, Subscription, mergeMap } from 'rxjs';
 import { ReportService } from '../report-component/report.service';
 import { IProfile } from './profile.model';
 import { ProfileService } from './profile.service';
@@ -44,6 +44,17 @@ export class ProfileComponent implements OnInit, OnDestroy {
       console.log('response for user: ', res.user);
       console.log('user_id', this.user_id);
     });
+
+
+    //  this.subscription = this.activatedRoute.paramMap
+    //    .pipe(
+    //      map((params) => params.get('user_id')),
+    //      mergeMap((id) => this.profileService.getUsereById(this.user_id))
+    //    )
+    //    .subscribe((res: any) => {
+    //      this.profileData = res.user;
+    //      console.log('response for user: ' + res.user)
+    //    });
   }
 
   ngOnDestroy() {
