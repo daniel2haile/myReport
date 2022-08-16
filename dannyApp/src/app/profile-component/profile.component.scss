@@ -34,3 +34,24 @@ width: 200px;
 height: 150px;
 border-radius: 10px;
 }
+
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  max-width: 100%;
+  text-align: center;
+}
+
+th {
+  background-color: lightseagreen;
+}
+td {
+  background-color: orange;
+}
+h1 {
+  text-align: center;
+  color: blue;
+  text-decoration: underline;
+}

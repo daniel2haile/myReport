@@ -1,43 +1,62 @@
-<!-- <div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <h2 class="animate-charcter text-center" >Welcome - {{profileData.firstname}}</h2><br/>
-      <li class="nav-item">
-      </li>
-  </nav>
-</div> -->
-
-
-
-<div>
-  <!-- <h2>Reports test</h2> -->
-  <h3 *ngFor="let data of reportData">
-    <!-- Date : {{data.createdAt | date}}
-    Title : {{data.title}}
-    imageName : {{data.imageName}}
-     Description : {{data.description}} -->
-     <!-- images:  <Img [src]="data.imageUrl" /> -->
-  </h3>
-</div>
-
-<hr >
+<hr />
 <div class="panel panel-primary">
-<div class="panel-heading text-center">Profile Details</div>
+  <div class="panel-heading text-center">Profile Details</div>
   <div class="panel-body">
+    <h2 class="text-center">
+      Welcome (እንኳን ደህና መጡ), {{ profileData.firstname }} !!!
+    </h2>
 
-      <h3 *ngFor="let data of reportData" class="text-center">
-        <Img [src]="data.imageUrl" /> <br />
-      </h3>
+    <table class="table table-striped">
+      <caption class="text-center">
+        Details for
+        {{
+          profileData.firstname
+        }}
+        {{
+          profileData.lastname
+        }}
+      </caption>
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">Image</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Middle Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Cuurent City</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Role</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td *ngFor="let data of reportData" class="text-center">
+            <Img [src]="data.imageUrl" />
+          </td>
+          <td>{{ profileData.firstname }}</td>
+          <td>{{ profileData.middlename }}</td>
+          <td>{{ profileData.lastname }}</td>
+          <td>{{ profileData.current_city }}</td>
+          <td>{{ profileData.phone }}</td>
+          <td>{{ profileData.role }}</td>
+          <td>{{ profileData.email }}</td>
 
-   <h2 class="text-center">Welcome (እንኳን ደህና መጡ), {{profileData.firstname}} !!!</h2>
-   <hr />
-  ID: {{profileData._id}} <br />
-  First Name: {{profileData.firstname}} <br />
-  Middle Name: {{profileData.middlename}} <br />
-  Last Name: {{profileData.lastname}} <br />
-  Current City: {{profileData.current_city}} <br />
-  Phone: {{profileData.phone}} <br />
-  Role: {{profileData.role}} <br />
-  Email: {{profileData.email}}
+          <a
+            style="color: blue"
+            >Update</a
+          >
+          <br>
+          <br>
+          <br>
 
-</div>
+           <a
+            style="color: blue"
+            >Help?</a
+          >
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
