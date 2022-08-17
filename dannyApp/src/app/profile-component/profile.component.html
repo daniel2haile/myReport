@@ -19,7 +19,7 @@
       <thead>
         <tr>
           <!-- <th scope="col">#</th> -->
-          <th scope="col">Image</th>
+          <!-- <th scope="col">Image</th> -->
           <th scope="col">First Name</th>
           <th scope="col">Middle Name</th>
           <th scope="col">Last Name</th>
@@ -32,9 +32,9 @@
       </thead>
       <tbody>
         <tr>
-          <td *ngFor="let data of reportData" class="text-center">
+          <!-- <td *ngFor="let data of reportData" class="text-center">
             <Img [src]="data.imageUrl" />
-          </td>
+          </td> -->
           <td>{{ profileData.firstname }}</td>
           <td>{{ profileData.middlename }}</td>
           <td>{{ profileData.lastname }}</td>
@@ -58,5 +58,13 @@
         </tr>
       </tbody>
     </table>
+
+     <ul *ngFor="let data of reportData" class="text-center">
+            <Img [src]="data.imageUrl" />
+            {{data.description}}
+            <br />
+            {{data.imageName}}
+            <hr />
+     </ul>
   </div>
 </div>

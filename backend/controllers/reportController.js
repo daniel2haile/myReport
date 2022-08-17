@@ -14,40 +14,34 @@ const storage = multer.diskStorage({
       .split(" ")
       .join("_");
     cb(null, Date.now() + name);
-   
   },
-
 });
 
 //DONE
 var upload = multer({
   storage: storage,
-  limits: { fileSize: 1024 * 1024 * 5},
-}).single("image");
+  limits: { fileSize: 1024 * 1024 * 5 },
+}).single("file");
 
 // var multipleUpload = multer({ storage: storage }).array("files");
 
-exports.createReport =  (req, res) => {
-
+exports.createReport = (req, res) => {
   upload(req, res, function (err) {
-
-      console.log("Testttt", req.file);
+    console.log("Testttt", req.file);
 
     if (err) {
       console.log(err);
       res.json({ status: err.message });
     } else {
-
       const url = req.protocol + "://" + req.get("host");
       const newReport = new ReportModel({
         title: req.body.title,
         description: req.body.description,
         imageName: req.body.imageName,
-        imageUrl : url + "/" + req.file.path,
+        imageUrl: url + "/" + req.file.path,
         createdAt: Date.now(),
         postedBy: req.body.postedBy,
       });
-    
 
       console.log("Test", newReport);
 
@@ -58,7 +52,7 @@ exports.createReport =  (req, res) => {
             status: "success",
             path: req.file,
             data: newReport,
-          })  
+          })
         )
         .catch((err) => res.json({ status: "error", message: err.message }));
     }
@@ -67,12 +61,10 @@ exports.createReport =  (req, res) => {
 
 exports.getAll = async (req, res) => {
   ReportModel.find({}, (err, report) => {
-    if(err) {
+    if (err) {
       return res.json({ status: "error", message: err.message });
-    } else{ 
-     return res.json({ status: "success", data: report });
-    }  
+    } else {
+      return res.json({ status: "success", data: report });
+    }
   });
-
- 
 };

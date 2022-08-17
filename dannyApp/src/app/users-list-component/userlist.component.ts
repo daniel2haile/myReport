@@ -13,7 +13,7 @@ import { ProfileService } from '../profile-component/profile.service';
 export class UsersListComponent implements OnInit, OnDestroy {
   userslist : IProfile[] = [];
   subscription !: Subscription
-
+  sum : number = 0;
   constructor(
     private userService : ProfileService,
     ){}
