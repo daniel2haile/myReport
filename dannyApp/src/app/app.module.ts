@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { MyModule } from './modules/my.module';
+import { MyPipe } from './pipes/my.pipe';
 import { ProfileComponent } from './profile-component/profile.component';
 import { ProfileService } from './profile-component/profile.service';
 import { ReportComponent } from './report-component/report.component';
@@ -30,7 +32,9 @@ import { UsersListComponent } from './users-list-component/userlist.component';
     FooterComponent,
     ReportComponent,
     ProfileComponent,
-    UsersListComponent
+    UsersListComponent,
+    MyPipe
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { UsersListComponent } from './users-list-component/userlist.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+
+    MyModule
   ],
   providers: [SignupService, ReportService, LoginService, ProfileService],
   bootstrap: [AppComponent],
