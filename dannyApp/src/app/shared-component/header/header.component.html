@@ -6,13 +6,27 @@
           <a [routerLink]="['/home']" class="btn btn-info">Home</a>
       </div>
       <div id="social">
-         <a [routerLink]="['/','login']" class="btn btn-success">
+         <a
+         [routerLink]="['/','login']"
+         class="btn btn-success"
+         *ngIf="!loginService.isLoggedIn()"
+         >
              <span class="glyphicon glyphicon-log-in"></span> LogIn</a>
          &nbsp;
-         <a [routerLink]="['/', 'signup']" class="btn btn-info">
+         <a
+         [routerLink]="['/', 'signup']"
+          class="btn btn-info"
+         *ngIf="!loginService.isLoggedIn()"
+          >
           <span class="glyphicon glyphicon-user"></span> Register</a>
            &nbsp;
-           <a [routerLink]="['#']" class="btn btn-danger">
+           <a
+
+            class="btn btn-danger"
+            style="cursor: pointer"
+            *ngIf="!!loginService.isLoggedIn()"
+            (click)="loginService.logout()"
+            >
              <span class="glyphicon glyphicon-log-out"></span> LogOut</a>
       </div>
     </header>

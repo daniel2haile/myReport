@@ -1,6 +1,10 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-center">Post Report</div>
   <div class="panel-body">
+
+    <h2 style="color:red"><del>Before : $1599.99</del></h2>
+    <h3 style="color:green">Now : $999.99</h3>
+    
     <form
       [formGroup]="reportForm"
       (ngSubmit)="onReport(reportForm)"
