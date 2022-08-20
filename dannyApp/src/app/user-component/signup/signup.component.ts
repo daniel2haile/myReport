@@ -21,6 +21,7 @@ export class SignupComponent implements OnInit, OnDestroy {
   signupForm!: FormGroup;
   subscription!: Subscription;
 
+  signupError: string = '';
   constructor(
     private formBuilder: FormBuilder,
     private service: SignupService,
@@ -51,13 +52,16 @@ export class SignupComponent implements OnInit, OnDestroy {
     if (signupForm.valid) {
       this.subscription = this.service
         .registerUser(signupForm.value)
-        .subscribe((res) => {
-          localStorage.setItem('STORAGE', JSON.stringify(res));
-          console.log(`get the response`, res);
-          this.router.navigate(['/login']);
+        .subscribe((res: any) => {
+          if (res.status === 'success') {
+            localStorage.setItem('STORAGE', JSON.stringify(res));
+            console.log(`get the response`, res);
+            this.router.navigate(['/login']);
+            this.signupError = '';
+          } else {
+            this.signupError = 'Sign up faild. Please try again!!!';
+          }
         });
-    } else {
-      this.router.navigate(['/signup']);
     }
   }
 

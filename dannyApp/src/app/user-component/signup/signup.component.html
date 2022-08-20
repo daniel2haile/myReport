@@ -2,6 +2,7 @@
   <div class="panel-heading text-center">Register</div>
 
   <div class="panel-body">
+      <h3 style="color: red">{{signupError}}</h3>
     <form
       [formGroup]="signupForm"
       (ngSubmit)="onRegister(signupForm)"

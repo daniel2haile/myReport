@@ -4,10 +4,11 @@
 </div>
 
 
+
+
 <div class="panel-body">
   <h3 style="color: red">{{loginError}}</h3>
   <form [formGroup]="loginForm" class="form-horizontal" (ngSubmit)="onLogin()">
-
     <div class="form-group" [ngClass]="{'has-error': (loginForm.get('email')?.touched ||
                                                       loginForm.get('email')?.dirty) &&
                                                       loginForm.get('email')?.invalid}">
@@ -63,14 +64,23 @@
       <button
       [disabled]="!loginForm.valid"
       class="btn btn-success btn-lg btn-block">
-                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"> </span>
 
       Submit
       </button>
+
+       <!-- <ng-template #loading> -->
+
+    <!-- </ng-template> -->
     </div>
+
+
   </form>
 </div>
+
 </div>
+
+
 
   <!-- <p>Don't have an account? <span> <a [routerLink]="['/signup']">Please click here to sign up.</a> </span>
     </p> -->
