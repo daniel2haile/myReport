@@ -102,6 +102,7 @@ exports.getUserById = async (req, res) => {
    * 
    * SOLUTION : USE trim()  as the following
    */
+  
   try {
     const user = await UserModel.findByIdAndUpdate({ _id: req.params.user_id.trim() });
     console.log("userrrr", user);

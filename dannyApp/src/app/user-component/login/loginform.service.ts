@@ -17,9 +17,10 @@ export class LoginService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('RoleType');
     this.router.navigate(['/login']);
   }
   isLoggedIn() {
-    return localStorage.getItem('token');
+    return !!localStorage.getItem('token');
   }
 }

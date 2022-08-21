@@ -10,7 +10,7 @@ export class UserGaurdService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
     this.token = localStorage.getItem('token');
-    this.role = localStorage.getItem('Role_Type');
+    this.role = localStorage.getItem('RoleType');
 
     if (this.token == null) {
       this.router.navigate(['/login']);

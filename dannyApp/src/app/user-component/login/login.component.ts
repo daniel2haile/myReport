@@ -40,18 +40,15 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   onLogin() {
-    // console.log(this.loginForm.valid);
-    // console.log(this.loginForm.value.email);
-    //     console.log(this.loginForm.value.password);
 
     if (this.loginForm.valid) {
       this.service.loginUser(this.loginForm.value).subscribe((res: any) => {
-        if (res.status === 'success') {
-          console.log(JSON.stringify(res));
-          localStorage.setItem('status', JSON.stringify(res.status));
+        if (res.status === 'success') { //Note: status === 'success' is from the backend query
+          this.loginForm.value.email === "admin@gmail.com"? localStorage.setItem('RoleType', 'Admin') : localStorage.setItem('RoleType', 'User')
           localStorage.setItem('token', JSON.stringify(res.token));
           this.loginError = '';
-          this.router.navigate(['/userslist']);
+          this.loginForm.reset();
+          this.router.navigate(['/report']);
         } else {
           this.loginError = 'Invalid password and email!!';
         }

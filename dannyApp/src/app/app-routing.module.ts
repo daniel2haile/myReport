@@ -14,22 +14,21 @@ const USER_ROUTES: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'report', component: ReportComponent },
-  { path: 'userslist',canActivate : [UserGaurdService], component: UsersListComponent },
+  { path: 'report', canActivate: [AuthGuard],component: ReportComponent },
+  {
+    path: 'userslist',
+    component: UsersListComponent,
+  },
   {
     path: 'profile/:user_id',
-    canActivate: [AuthGuard],
+
     component: ProfileComponent,
   },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    RouterModule.forRoot(USER_ROUTES),
-  ],
+  imports: [HttpClientModule, BrowserModule, RouterModule.forRoot(USER_ROUTES)],
 
   providers: [],
   exports: [RouterModule],

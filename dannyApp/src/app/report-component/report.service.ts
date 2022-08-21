@@ -16,4 +16,5 @@ export class ReportService {
   getReports(): Observable<IReport> {
     return this.http.get<IReport>(this.REPORT_URL);
   }
+  
 }

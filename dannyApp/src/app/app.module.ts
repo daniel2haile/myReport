@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { UserGaurdService } from './guards/user.guard';
 import { MyModule } from './modules/my.module';
 import { MyPipe } from './pipes/my.pipe';
 import { ProfileComponent } from './profile-component/profile.component';
@@ -20,6 +21,8 @@ import { LoginService } from './user-component/login/loginform.service';
 import { SignupComponent } from './user-component/signup/signup.component';
 import { SignupService } from './user-component/signup/signup.service';
 import { UsersListComponent } from './users-list-component/userlist.component';
+import { UserDashboardComponent } from './dashbords/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './dashbords/admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -33,7 +36,9 @@ import { UsersListComponent } from './users-list-component/userlist.component';
     ReportComponent,
     ProfileComponent,
     UsersListComponent,
-    MyPipe
+    MyPipe,
+    UserDashboardComponent,
+    AdminDashboardComponent
 
   ],
   imports: [
@@ -46,7 +51,7 @@ import { UsersListComponent } from './users-list-component/userlist.component';
 
     MyModule
   ],
-  providers: [SignupService, ReportService, LoginService, ProfileService],
+  providers: [SignupService, ReportService, LoginService, ProfileService, UserGaurdService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
