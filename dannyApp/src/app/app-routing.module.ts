@@ -2,6 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminDashboardComponent } from './dashbords/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './dashbords/user-dashboard/user-dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UserGaurdService } from './guards/user.guard';
 import { ProfileComponent } from './profile-component/profile.component';
@@ -24,6 +26,9 @@ const USER_ROUTES: Routes = [
 
     component: ProfileComponent,
   },
+
+  { path : 'admindashboard', component: AdminDashboardComponent},
+  { path : 'userdashboard', component: UserDashboardComponent}
 ];
 
 @NgModule({
