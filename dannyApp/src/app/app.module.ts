@@ -21,8 +21,8 @@ import { LoginService } from './user-component/login/loginform.service';
 import { SignupComponent } from './user-component/signup/signup.component';
 import { SignupService } from './user-component/signup/signup.service';
 import { UsersListComponent } from './users-list-component/userlist.component';
-import { UserDashboardComponent } from './dashbords/user-dashboard/user-dashboard.component';
-import { AdminDashboardComponent } from './dashbords/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './dashboards/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -38,7 +38,8 @@ import { AdminDashboardComponent } from './dashbords/admin-dashboard/admin-dashb
     UsersListComponent,
     MyPipe,
     UserDashboardComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+
 
   ],
   imports: [

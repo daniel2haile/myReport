@@ -2,8 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminDashboardComponent } from './dashbords/admin-dashboard/admin-dashboard.component';
-import { UserDashboardComponent } from './dashbords/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './dashboards/user-dashboard/user-dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UserGaurdService } from './guards/user.guard';
 import { ProfileComponent } from './profile-component/profile.component';
@@ -16,26 +16,35 @@ const USER_ROUTES: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'report', canActivate: [AuthGuard],component: ReportComponent },
+
+  {
+    path: 'userdashboard',
+    loadChildren: () =>
+      import('./dashboards/user-dashboard/user-dashboard.module').then(
+        (m) => m.UserDashboardModule
+      ),
+    canActivate: [AuthGuard],
+  },
   {
     path: 'userslist',
-    component: UsersListComponent,
+    loadChildren: () =>
+      import('./dashboards/user-dashboard/user-dashboard.module').then(
+        (m) => m.UserDashboardModule
+      ),
   },
   {
-    path: 'profile/:user_id',
-
-    component: ProfileComponent,
+    path: 'admindashboard',
+    loadChildren: () =>
+      import('./dashboards/admin-dashboard/admin-dashboard.module').then(
+        (m) => m.AdminDashboardModule
+      ),
+    canActivate: [AuthGuard],
   },
-
-  { path : 'admindashboard', component: AdminDashboardComponent},
-  { path : 'userdashboard', component: UserDashboardComponent}
 ];
 
 @NgModule({
   declarations: [],
   imports: [HttpClientModule, BrowserModule, RouterModule.forRoot(USER_ROUTES)],
-
-  providers: [],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

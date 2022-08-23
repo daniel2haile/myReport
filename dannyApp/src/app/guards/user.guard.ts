@@ -17,11 +17,11 @@ export class UserGaurdService implements CanActivate {
       return false;
     }
     if (this.token !== null && this.role === 'Admin') {
-      this.router.navigate(['/userslist']);
-      return true;
+      this.router.navigate(['/admindashboard']);
+      return false;
     }
     if (this.token !== null && this.role === 'User') {
-      this.router.navigate(['/report']);
+      this.router.navigate(['/userdashboard']);
       return false;
     }
     return false;

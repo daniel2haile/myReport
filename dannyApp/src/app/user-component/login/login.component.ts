@@ -6,7 +6,6 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ILogin } from '../user-models/login.model';
 import { LoginService } from './loginform.service';
 
 @Component({
@@ -48,7 +47,17 @@ export class LoginComponent implements OnInit, OnDestroy {
           localStorage.setItem('token', JSON.stringify(res.token));
           this.loginError = '';
           this.loginForm.reset();
-          this.router.navigate(['/admindashboard']);
+
+          const role = localStorage.getItem('RoleType');
+          if(role === 'Admin') {
+            this.router.navigate(['/admindashboard']);
+            console.log('admin router works! ')
+          }else{
+            this.router.navigate(['/userdashboard']);
+            console.log('user router works! ');
+
+          }
+
         } else {
           this.loginError = 'Invalid password and email!!';
         }

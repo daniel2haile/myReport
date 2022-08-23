@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <button class="btn btn-success  glyphicon glyphicon-log-out"
+     [routerLink]="['/','login']"
+         class="btn btn-success"
+         *ngIf="!loginService.isLoggedIn()"
+    >LogIn</button>&nbsp;
+    <button class="btn btn-warning  glyphicon glyphicon-log-out"
+      [routerLink]="['/', 'signup']"
+          class="btn btn-info"
+         *ngIf="!loginService.isLoggedIn()"
+
+    >Sign Up</button>&nbsp;
+    <button class="btn btn-danger  glyphicon glyphicon-log-out"
+            style="cursor: pointer"
+            *ngIf="!!loginService.isLoggedIn()"
+            (click)="loginService.logout()">LogOut</button>
+  </div>
+
+  <div class="panel-body">
+ <a [routerLink]="['/userslist']">Users List</a>
+  </div>
+</div>
