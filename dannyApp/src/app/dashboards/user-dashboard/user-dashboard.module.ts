@@ -5,12 +5,12 @@ import { UserDashboardComponent } from './user-dashboard.component';
 import { ReportComponent } from 'src/app/report-component/report.component';
 
 const USER_DASHBOARD_ROUTES : Routes = [
-{ path : '', component : UserDashboardComponent,
- children: [
+{ path : '', component : UserDashboardComponent},
+//  children: [
   { path : '', redirectTo: 'dashboard', pathMatch : 'full'},
   { path : 'report', component : ReportComponent}
- ]
-}
+//  ]
+
 ]
 
 @NgModule({

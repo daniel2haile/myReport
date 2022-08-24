@@ -32,13 +32,21 @@ const USER_ROUTES: Routes = [
         (m) => m.UserDashboardModule
       ),
   },
+
+  {
+    path: 'profile/:user_id',
+    loadChildren: () =>
+      import('./dashboards/admin-dashboard/admin-dashboard.module').then(
+        (m) => m.AdminDashboardModule
+      ),
+  },
   {
     path: 'admindashboard',
     loadChildren: () =>
       import('./dashboards/admin-dashboard/admin-dashboard.module').then(
         (m) => m.AdminDashboardModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
 ];
 

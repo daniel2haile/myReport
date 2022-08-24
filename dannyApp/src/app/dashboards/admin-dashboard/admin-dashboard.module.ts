@@ -6,24 +6,27 @@ import { AdminDashboardComponent } from './admin-dashboard.component';
 import { UsersListComponent } from 'src/app/users-list-component/userlist.component';
 import { ProfileComponent } from 'src/app/profile-component/profile.component';
 
-
-
 const ADMIN_DASHBOARD_ROUTES: Routes = [
   {
     path: '',
     component: AdminDashboardComponent,
-    children: [
-      { path: '', redirectTo: 'admindashboard', pathMatch: 'full' },
-      { path: 'report', component: ReportComponent },
-      { path : 'userslist', component: UsersListComponent},
-      { path: 'profile/:user_id', component : ProfileComponent }
-    ],
   },
+  // children: [
+  // { path: '', redirectTo: 'admindashboard', pathMatch: 'full' },
+  { path: 'report', component: ReportComponent },
+  {
+    path: 'userslist',
+    component: UsersListComponent,
+  },
+  { path: 'profile/:user_id', component: ProfileComponent },
+
+  // ],
+  // },
 ];
 
 @NgModule({
   declarations: [],
   imports: [CommonModule, RouterModule.forChild(ADMIN_DASHBOARD_ROUTES)],
-  exports : [RouterModule]
+  exports: [RouterModule],
 })
 export class AdminDashboardModule {}
