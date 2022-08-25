@@ -1,319 +1,356 @@
 <!-- <div class="panel panel-primary">
   <div class="panel-heading text-center">Register</div> -->
- <div class="panel panel-primary">
-    <div class="panel-heading">DANNY
-
-
-    </div>
-<div class="container">
-
-   <h2>Sign Up</h2>
-
-  <div class="panel-body">
-    <h3 style="color: red">{{ signupError }}</h3>
-    <form
-      [formGroup]="signupForm"
-      (ngSubmit)="onRegister(signupForm)"
-      class="form-horizontal"
-    >
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (signupForm.get('firstname')?.touched ||
-              signupForm.get('firstname')?.dirty) &&
-            !signupForm.get('firstname')?.valid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="fname"> First Name</label>
-          <input
-            class="form-control"
-            type="text"
-            id="fname"
-            placeholder="Enter First Name"
-            formControlName="firstname"
-          />
-
-          <div
-            class="help-block"
-            *ngIf="
-              signupForm.get('firstname')?.touched ||
-              (signupForm.get('firstname')?.dirty &&
-                signupForm.get('firstname')?.errors)
-            "
-          >
-            <span *ngIf="signupForm.get('firstname')?.errors?.['required']">
-              First Name required
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Middle Name -->
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (signupForm.get('middlename')?.touched ||
-              signupForm.get('middlename')?.dirty) &&
-            !signupForm.get('middlename')?.valid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="lname"> Middle Name</label>
-          <input
-            class="form-control"
-            type="text"
-            id="lname"
-            placeholder="Enter Middle Name"
-            formControlName="middlename"
-          />
-          <div
-            class="help-block"
-            *ngIf="
-              signupForm.get('middlename')?.touched ||
-              (signupForm.get('middlename')?.dirty &&
-                signupForm.get('middlename')?.errors)
-            "
-          >
-            <span *ngIf="signupForm.get('middlename')?.errors?.['required']">
-              Middle Name required
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Last Name -->
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (signupForm.get('lastname')?.touched ||
-              signupForm.get('lastname')?.dirty) &&
-            !signupForm.get('lastname')?.valid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="lname"> Last Name</label>
-          <input
-            class="form-control"
-            type="text"
-            id="lname"
-            placeholder="Enter Last Name"
-            formControlName="lastname"
-          />
-          <div
-            class="help-block"
-            *ngIf="
-              signupForm.get('lastname')?.touched ||
-              (signupForm.get('lastname')?.dirty &&
-                signupForm.get('lastname')?.errors)
-            "
-          >
-            <span *ngIf="signupForm.get('lastname')?.errors?.['required']">
-              Last Name required
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Current City -->
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (signupForm.get('current_city')?.touched ||
-              signupForm.get('current_city')?.dirty) &&
-            !signupForm.get('current_city')?.valid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="current_city"> Current City</label>
-          <input
-            class="form-control"
-            type="text"
-            id="current_city"
-            placeholder="Enter Current City"
-            formControlName="current_city"
-          />
-          <div
-            class="help-block"
-            *ngIf="
-              signupForm.get('current_city')?.touched ||
-              (signupForm.get('current_city')?.dirty &&
-                signupForm.get('current_city')?.errors)
-            "
-          >
-            <span *ngIf="signupForm.get('current_city')?.errors?.['required']">
-              Current City required
-            </span>
-          </div>
-        </div>
-      </div>
-      <!-- Email -->
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (signupForm.get('email')?.touched ||
-              signupForm.get('email')?.dirty) &&
-            !signupForm.get('email')?.valid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="email"> Email</label>&nbsp;
-          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-          <input
-            class="form-control"
-            type="email"
-            id="email"
-            placeholder="Enter your Email"
-            formControlName="email"
-          />
-
-          <div
-            class="help-block"
-            *ngIf="
-              signupForm.get('email')?.touched ||
-              (signupForm.get('email')?.dirty &&
-                signupForm.get('email')?.errors)
-            "
-          >
-            <span *ngIf="signupForm.get('email')?.errors?.['required']">
-              Email required
-            </span>
-            <span *ngIf="signupForm.get('email')?.errors?.['pattern']">
-              Please enter a valid email
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Password -->
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (signupForm.get('password')?.touched ||
-              signupForm.get('password')?.dirty) &&
-            !signupForm.get('password')?.valid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="pass"> Password</label>&nbsp;
-          <span class="glyphicon glyphicon-lock"></span>
-          <input
-            class="form-control"
-            type="password"
-            id="pass"
-            placeholder="Enter your Password"
-            formControlName="password"
-          />
-
-          <div
-            class="help-block"
-            *ngIf="
-              signupForm.get('password')?.touched ||
-              (signupForm.get('password')?.dirty &&
-                signupForm.get('password')?.errors)
-            "
-          >
-            <span *ngIf="signupForm.get('password')?.errors?.['required']">
-              Password required
-            </span>
-
-            <span *ngIf="signupForm.get('password')?.errors?.['minlength']">
-              Password min length should be at least 4
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!--  Phone -->
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (signupForm.get('phone')?.touched ||
-              signupForm.get('phone')?.dirty) &&
-            !signupForm.get('phone')?.valid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="phone"> Phone</label>&nbsp;
-          <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-          <input
-            class="form-control"
-            type="tel"
-            id="phone"
-            placeholder="Enter your Phone"
-            formControlName="phone"
-          />
-
-          <div
-            class="help-block"
-            *ngIf="
-              signupForm.get('phone')?.touched ||
-              (signupForm.get('phone')?.dirty &&
-                signupForm.get('phone')?.errors)
-            "
-          >
-            <span *ngIf="signupForm.get('phone')?.errors?.['required']">
-              Phone required
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Role -->
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (signupForm.get('role')?.touched ||
-              signupForm.get('role')?.dirty) &&
-            !signupForm.get('role')?.valid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="role"> Role</label>&nbsp;
-          <select formControlName="role" id="role" class="form-control">
-            <option disabled>Choose role</option>
-            <option>User</option>
-            <option disabled>Admin [taken]</option>
-          </select>
-
-          <div
-            class="help-block"
-            *ngIf="
-              signupForm.get('role')?.touched ||
-              (signupForm.get('role')?.dirty && signupForm.get('role')?.errors)
-            "
-          >
-            <span *ngIf="signupForm.get('role')?.errors?.['required']">
-              Role required
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Submit button -->
-      <div>
-        <button
-          type="submit"
-          [disabled]="!signupForm.valid"
-          class="btn btn-success btn-lg btn-block"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <img src="../../../assets/images/mynameLogo.png" alt="daniel's Logo" />
   </div>
-  <p>
-    Already have an account?
-    <span>
-      <a [routerLink]="['/login']">Please click here to sign in.</a>
-    </span>
-  </p>
+  <div class="container">
+    <h2 class="glyphicon glyphicon-user"> Sign-Up</h2>
+    <hr />
+
+    <div class="panel-body">
+      <h3 style="color: red">{{ signupError }}</h3>
+      <form
+        [formGroup]="signupForm"
+        (ngSubmit)="onRegister(signupForm)"
+        class="form-horizontal"
+      >
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (signupForm.get('firstname')?.touched ||
+                signupForm.get('firstname')?.dirty) &&
+              !signupForm.get('firstname')?.valid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="fname"> First Name</label>
+            <input
+              class="form-control"
+              type="text"
+              id="fname"
+              placeholder="Enter First Name"
+              formControlName="firstname"
+            />
+
+            <div
+              class="help-block"
+              *ngIf="
+                signupForm.get('firstname')?.touched ||
+                (signupForm.get('firstname')?.dirty &&
+                  signupForm.get('firstname')?.errors)
+              "
+            >
+              <span *ngIf="signupForm.get('firstname')?.errors?.['required']">
+                First Name required
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Name -->
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (signupForm.get('middlename')?.touched ||
+                signupForm.get('middlename')?.dirty) &&
+              !signupForm.get('middlename')?.valid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="lname"> Middle Name</label>
+            <input
+              class="form-control"
+              type="text"
+              id="lname"
+              placeholder="Enter Middle Name"
+              formControlName="middlename"
+            />
+            <div
+              class="help-block"
+              *ngIf="
+                signupForm.get('middlename')?.touched ||
+                (signupForm.get('middlename')?.dirty &&
+                  signupForm.get('middlename')?.errors)
+              "
+            >
+              <span *ngIf="signupForm.get('middlename')?.errors?.['required']">
+                Middle Name required
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Last Name -->
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (signupForm.get('lastname')?.touched ||
+                signupForm.get('lastname')?.dirty) &&
+              !signupForm.get('lastname')?.valid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="lname"> Last Name</label>
+            <input
+              class="form-control"
+              type="text"
+              id="lname"
+              placeholder="Enter Last Name"
+              formControlName="lastname"
+            />
+            <div
+              class="help-block"
+              *ngIf="
+                signupForm.get('lastname')?.touched ||
+                (signupForm.get('lastname')?.dirty &&
+                  signupForm.get('lastname')?.errors)
+              "
+            >
+              <span *ngIf="signupForm.get('lastname')?.errors?.['required']">
+                Last Name required
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Current City -->
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (signupForm.get('current_city')?.touched ||
+                signupForm.get('current_city')?.dirty) &&
+              !signupForm.get('current_city')?.valid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="current_city">
+              Current City</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              id="current_city"
+              placeholder="Enter Current City"
+              formControlName="current_city"
+            />
+            <div
+              class="help-block"
+              *ngIf="
+                signupForm.get('current_city')?.touched ||
+                (signupForm.get('current_city')?.dirty &&
+                  signupForm.get('current_city')?.errors)
+              "
+            >
+              <span
+                *ngIf="signupForm.get('current_city')?.errors?.['required']"
+              >
+                Current City required
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- Email -->
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (signupForm.get('email')?.touched ||
+                signupForm.get('email')?.dirty) &&
+              !signupForm.get('email')?.valid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="email"> Email</label>&nbsp;
+            <span
+              class="glyphicon glyphicon-envelope"
+              aria-hidden="true"
+            ></span>
+            <input
+              class="form-control"
+              type="email"
+              id="email"
+              placeholder="Enter your Email"
+              formControlName="email"
+            />
+
+            <div
+              class="help-block"
+              *ngIf="
+                signupForm.get('email')?.touched ||
+                (signupForm.get('email')?.dirty &&
+                  signupForm.get('email')?.errors)
+              "
+            >
+              <span *ngIf="signupForm.get('email')?.errors?.['required']">
+                Email required
+              </span>
+              <span *ngIf="signupForm.get('email')?.errors?.['pattern']">
+                Please enter a valid email
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (signupForm.get('password')?.touched ||
+                signupForm.get('password')?.dirty) &&
+              !signupForm.get('password')?.valid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="pass"> Password</label>&nbsp;
+            <span class="glyphicon glyphicon-lock"></span>
+            <input
+              class="form-control"
+              type="password"
+              id="pass"
+              placeholder="Enter your Password"
+              formControlName="password"
+            />
+
+            <div
+              class="help-block"
+              *ngIf="
+                signupForm.get('password')?.touched ||
+                (signupForm.get('password')?.dirty &&
+                  signupForm.get('password')?.errors)
+              "
+            >
+              <span *ngIf="signupForm.get('password')?.errors?.['required']">
+                Password required
+              </span>
+
+              <span *ngIf="signupForm.get('password')?.errors?.['minlength']">
+                Password min length should be at least 4
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!--  Phone -->
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (signupForm.get('phone')?.touched ||
+                signupForm.get('phone')?.dirty) &&
+              !signupForm.get('phone')?.valid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="phone"> Phone</label>&nbsp;
+            <span
+              class="glyphicon glyphicon-earphone"
+              aria-hidden="true"
+            ></span>
+            <input
+              class="form-control"
+              type="tel"
+              id="phone"
+              placeholder="Enter your Phone"
+              formControlName="phone"
+            />
+
+            <div
+              class="help-block"
+              *ngIf="
+                signupForm.get('phone')?.touched ||
+                (signupForm.get('phone')?.dirty &&
+                  signupForm.get('phone')?.errors)
+              "
+            >
+              <span *ngIf="signupForm.get('phone')?.errors?.['required']">
+                Phone required
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Role -->
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (signupForm.get('role')?.touched ||
+                signupForm.get('role')?.dirty) &&
+              !signupForm.get('role')?.valid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="role"> Role</label>&nbsp;
+            <select formControlName="role" id="role" class="form-control">
+              <option disabled>Choose role</option>
+              <option>User</option>
+              <option disabled>Admin [taken]</option>
+            </select>
+
+            <div
+              class="help-block"
+              *ngIf="
+                signupForm.get('role')?.touched ||
+                (signupForm.get('role')?.dirty &&
+                  signupForm.get('role')?.errors)
+              "
+            >
+              <span *ngIf="signupForm.get('role')?.errors?.['required']">
+                Role required
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <div>
+          <button
+            type="submit"
+            [disabled]="!signupForm.valid"
+            class="btn btn-success btn-lg btn-block"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+
+      <h6>
+        Already have an account?
+        <a [routerLink]="['/login']">Please Sign in.</a>
+      </h6>
+    </div>
+
+    <div id="panel-body">
+      <h2>Quotes by Famous People</h2>
+      <p>
+        The greatest glory in living lies not in never falling, but in rising
+        every time we fall. -Nelson Mandela
+      </p>
+
+      <p>
+        Your time is limited, so don't waste it living someone else's life.
+        Don't be trapped by dogma – which is living with the results of other
+        people's thinking. -Steve Jobs
+      </p>
+
+      <p>
+        If you look at what you have in life, you'll always have more. If you
+        look at what you don't have in life, you'll never have enough. -Oprah
+        Winfrey
+      </p>
+
+      <p>
+        If you set your goals ridiculously high and it's a failure, you will
+        fail above everyone else's success. -James Cameron
+      </p>
+
+      <img src="../../../assets/images/me.jpg" alt="daniel's Logo" />
+    </div>
+  </div>
 </div>

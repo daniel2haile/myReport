@@ -3,117 +3,120 @@
  Login
 </div> -->
 
- <div class="panel panel-primary">
-    <div class="panel-heading">DANNY
-
-
-    </div>
-
-<div class="container">
-
-
-  <h2>Sign In</h2>
-
-
-  <div class="panel-body">
-    <h3 style="color: red">{{ loginError }}</h3>
-    <form
-      [formGroup]="loginForm"
-      class="form-horizontal"
-      (ngSubmit)="onLogin()"
-    >
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (loginForm.get('email')?.touched ||
-              loginForm.get('email')?.dirty) &&
-            loginForm.get('email')?.invalid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="email"> Email</label>&nbsp;
-          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-          <input
-            class="form-control"
-            type="text"
-            id="email"
-            formControlName="email"
-            placeholder="Enter your email"
-          />
-          <div
-            class="help-block"
-            *ngIf="
-              loginForm.get('email')?.touched ||
-              (loginForm.get('email')?.dirty && loginForm.get('email')?.errors)
-            "
-          >
-            <span *ngIf="loginForm.get('email')?.errors?.['required']"
-              >Email Required</span
-            >
-            <span *ngIf="loginForm.get('email')?.errors?.['pattern']"
-              >Please enter a valid email</span
-            >
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="form-group"
-        [ngClass]="{
-          'has-error':
-            (loginForm.get('password')?.touched ||
-              loginForm.get('password')?.dirty) &&
-            !loginForm.get('password')?.valid
-        }"
-      >
-        <div class="col-md-12">
-          <label class="control-label" for="pass">Password</label>&nbsp;
-          <span class="glyphicon glyphicon-lock"></span>
-          <input
-            class="form-control"
-            type="password"
-            id="pass"
-            formControlName="password"
-            placeholder="Enter your password"
-          />
-
-          <div
-            class="help-block"
-            *ngIf="
-              loginForm.get('password')?.touched ||
-              (loginForm.get('password')?.dirty &&
-                loginForm.get('password')?.errors)
-            "
-          >
-            <span *ngIf="loginForm.get('password')?.errors?.['required']"
-              >Password required</span
-            >
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <button
-          [disabled]="!loginForm.valid"
-          class="btn btn-success btn-lg btn-block"
-        >
-          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1">
-          </span>
-
-          Submit
-        </button>
-
-        <!-- <ng-template #loading> -->
-
-        <!-- </ng-template> -->
-      </div>
-    </form>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <img src="../../../assets/images/mynameLogo.png" alt="daniel's Logo" />
   </div>
-  <p>
-    Don't have an account?
-    <span>
-      <a [routerLink]="['/signup']">Please click here to sign up.</a>
-    </span>
-  </p>
+
+  <div class="container">
+    <h2 class="glyphicon glyphicon-log-in"> Sign-In</h2>
+
+    <hr />
+
+    <div class="panel-body">
+      <h3 style="color: red">{{ loginError }}</h3>
+      <form
+        [formGroup]="loginForm"
+        class="form-horizontal"
+        (ngSubmit)="onLogin()"
+      >
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (loginForm.get('email')?.touched ||
+                loginForm.get('email')?.dirty) &&
+              loginForm.get('email')?.invalid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="email"> Email</label>&nbsp;
+            <span
+              class="glyphicon glyphicon-envelope"
+              aria-hidden="true"
+            ></span>
+            <input
+              class="form-control"
+              type="text"
+              id="email"
+              formControlName="email"
+              placeholder="Enter your email"
+            />
+            <div
+              class="help-block"
+              *ngIf="
+                loginForm.get('email')?.touched ||
+                (loginForm.get('email')?.dirty &&
+                  loginForm.get('email')?.errors)
+              "
+            >
+              <span *ngIf="loginForm.get('email')?.errors?.['required']"
+                >Email Required</span
+              >
+              <span *ngIf="loginForm.get('email')?.errors?.['pattern']"
+                >Please enter a valid email</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              (loginForm.get('password')?.touched ||
+                loginForm.get('password')?.dirty) &&
+              !loginForm.get('password')?.valid
+          }"
+        >
+          <div class="col-md-12">
+            <label class="control-label" for="pass">Password</label>&nbsp;
+            <span class="glyphicon glyphicon-lock"></span>
+            <input
+              class="form-control"
+              type="password"
+              id="pass"
+              formControlName="password"
+              placeholder="Enter your password"
+            />
+
+            <div
+              class="help-block"
+              *ngIf="
+                loginForm.get('password')?.touched ||
+                (loginForm.get('password')?.dirty &&
+                  loginForm.get('password')?.errors)
+              "
+            >
+              <span *ngIf="loginForm.get('password')?.errors?.['required']"
+                >Password required</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button
+            [disabled]="!loginForm.valid"
+            class="btn btn-success btn-lg btn-block"
+          >
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1">
+            </span>
+
+            Sign In
+          </button>
+
+          <!-- <ng-template #loading> -->
+
+          <!-- </ng-template> -->
+        </div>
+      </form>
+    </div>
+    <p>
+      Don't have an account?
+      <span>
+        <a [routerLink]="['/signup']">Create New Account.</a>
+      </span>
+    </p>
+  </div>
 </div>
