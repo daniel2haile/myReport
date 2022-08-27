@@ -11,5 +11,3 @@ router.get("/:user_id", userController.getUserById);
 router.delete("/:user_id", userController.deleteUserById);
 router.delete("/", userController.deleteAllUsers);
 module.exports = router;
-
-//changing something///
