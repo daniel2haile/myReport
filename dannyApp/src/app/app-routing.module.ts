@@ -19,26 +19,12 @@ const USER_ROUTES: Routes = [
 
   {
     path: 'userdashboard',
+
     loadChildren: () =>
       import('./dashboards/user-dashboard/user-dashboard.module').then(
         (m) => m.UserDashboardModule
       ),
     canActivate: [AuthGuard],
-  },
-  {
-    path: 'userslist',
-    loadChildren: () =>
-      import('./dashboards/user-dashboard/user-dashboard.module').then(
-        (m) => m.UserDashboardModule
-      ),
-  },
-
-  {
-    path: 'profile/:user_id',
-    loadChildren: () =>
-      import('./dashboards/admin-dashboard/admin-dashboard.module').then(
-        (m) => m.AdminDashboardModule
-      ),
   },
   {
     path: 'admindashboard',

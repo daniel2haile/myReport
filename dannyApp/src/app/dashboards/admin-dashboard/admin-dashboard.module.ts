@@ -8,17 +8,19 @@ import { ProfileComponent } from 'src/app/profile-component/profile.component';
 
 const ADMIN_DASHBOARD_ROUTES: Routes = [
   {
-    path: '',
+    path: 'admindashboard',
     component: AdminDashboardComponent,
+    children: [
+      {
+        path: 'userslist',
+        component: UsersListComponent,
+        children: [{ path: 'profile/:user_id', component: ProfileComponent }],
+      },
+    ],
   },
   // children: [
   // { path: '', redirectTo: 'admindashboard', pathMatch: 'full' },
   { path: 'report', component: ReportComponent },
-  {
-    path: 'userslist',
-    component: UsersListComponent,
-  },
-  { path: 'profile/:user_id', component: ProfileComponent },
 
   // ],
   // },

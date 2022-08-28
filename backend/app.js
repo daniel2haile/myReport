@@ -11,6 +11,7 @@ const PORT = 8088;
 
 //db connection
 initiateMyMongoServer();
+// app.use(cors({origin: "*" }));
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads')) //file

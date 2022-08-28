@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.loginForm.reset();
 
           const role = localStorage.getItem('RoleType');
+          
           if(role === 'Admin') {
             this.router.navigate(['/admindashboard']);
             console.log('admin router works! ')
