@@ -1,5 +1,5 @@
 <div class="container">
-    <!-- <div class="panel-heading"> -->
+    <div class="panel-heading">
     <button class="btn btn-success  glyphicon glyphicon-log-in"
      [routerLink]="['/','login']"
          class="btn btn-success"
@@ -16,6 +16,6 @@
             style="cursor: pointer"
             *ngIf="!!loginService.isLoggedIn()"
             (click)="loginService.logout()">LogOut</button>
-  <!-- </div> -->
+  </div>
 </div>
 

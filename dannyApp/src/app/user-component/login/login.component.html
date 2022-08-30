@@ -5,11 +5,12 @@
 
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <img src="../../../assets/images/mynameLogo.png" alt="daniel's Logo" />
+    <img src="../../../assets/images/logoLast.png" alt="daniel's Logo" />
   </div>
 
   <div class="container">
-    <h2 class="glyphicon glyphicon-log-in"> Sign-In</h2>
+    <img src="../../../assets/images/login-icon.png" alt="daniel's Logo" style="text-align:center"/>
+    <h2 class="glyphicon glyphicon-log-in text-center"> Sign-In</h2>
 
     <hr />
 
@@ -111,12 +112,18 @@
           <!-- </ng-template> -->
         </div>
       </form>
+      <h6>
+        Don't have an account?
+        <span>
+          <a [routerLink]="['/signup']">Create New Account.</a>
+        </span>
+      </h6>
     </div>
-    <p>
-      Don't have an account?
-      <span>
-        <a [routerLink]="['/signup']">Create New Account.</a>
-      </span>
-    </p>
+
+    <div id="panel-body">
+      <h3>Welcome | እንኳን ደህና መጡ!!!</h3>
+
+      <img src="../../../assets/images/Login.png" alt="login key" />
+    </div>
   </div>
 </div>

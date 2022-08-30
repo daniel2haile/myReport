@@ -18,7 +18,7 @@ img {
 .container {
   margin-top: 100px;
   // width: 100%;
-  background-color: rgb(188, 182, 174);
+ background-color: #a1969e94;
   border: 2px solid rgb(171, 223, 249);
   z-index: 99999;
 }
@@ -46,11 +46,17 @@ h6{
 #panel-body, p, h2{
  padding-left: 10px ;
  padding-right: 10px ;
+
+}
+
+h2{
+   text-shadow: 1px 1px 1px rgb(255, 204, 0),
+               2px 2px 1px red;
 }
 
 #panel-body img{
   width: 100%;
-  height: 100%;
+  height: 400%;
  padding-left: 10px ;
  padding-right: 10px ;
  padding-top: 10px ;

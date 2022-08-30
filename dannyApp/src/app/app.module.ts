@@ -15,7 +15,7 @@ import { ReportComponent } from './report-component/report.component';
 import { ReportService } from './report-component/report.service';
 import { FooterComponent } from './shared-component/footer/footer.component';
 import { HeaderComponent } from './shared-component/header/header.componet';
-import { HomeComponent } from './shared-component/home-componet/home.componet';
+import { HomeComponent } from './shared-component/home/home.componet';
 import { LoginComponent } from './user-component/login/login.component';
 import { LoginService } from './user-component/login/loginform.service';
 import { SignupComponent } from './user-component/signup/signup.component';
@@ -23,6 +23,7 @@ import { SignupService } from './user-component/signup/signup.service';
 import { UsersListComponent } from './users-list-component/userlist.component';
 import { UserDashboardComponent } from './dashboards/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dashboard.component';
+import { AboutComponent } from './shared-component/about/about.component';
 
 
 @NgModule({
@@ -39,9 +40,9 @@ import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dash
     MyPipe,
     UserDashboardComponent,
     AdminDashboardComponent,
-
-
+    AboutComponent,
   ],
+
   imports: [
     BrowserModule,
     RouterModule,

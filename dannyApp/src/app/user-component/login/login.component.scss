@@ -1,5 +1,4 @@
 img {
-
   border-radius: 12px;
   width: 110px;
   height: 79px;
@@ -7,7 +6,7 @@ img {
   margin: 0 auto;
   z-index: 9999;
   line-height: 80px;
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .panel-heading {
@@ -16,20 +15,53 @@ img {
   position: fixed;
 }
 
-.container {
+.container, img {
   margin-top: 100px;
-  width: 75%;
-  background-color: rgb(249, 215, 171);
+  // width: 100%;
+  background-color: #a1969e94;
   border: 2px solid rgb(171, 223, 249);
   z-index: 99999;
 }
 
-hr{
-  color: red
+hr {
+  color: red;
 }
 
-.btn{
+.btn {
   border-radius: 35px;
 }
 
+.panel-body {
+  background-color: rgb(249, 215, 171);
+  border-radius: 4px;
+  width: 50%;
+  float: left;
+}
 
+#panel-body {
+  background-color: rgb(236, 243, 241);
+  border-radius: 4px;
+  width: 49%;
+  float: right;
+}
+
+#panel-body img {
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h3, h2 {
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+   text-shadow: 1px 1px 1px rgb(255, 204, 0),
+               2px 2px 1px red;
+}
+
+h6 {
+  padding-top: 15px;
+}
