@@ -15,7 +15,8 @@ img {
   position: fixed;
 }
 
-.container, img {
+.container {
+  background-image: url(../../../assets/images/spaceneedlegreen.png);
   margin-top: 100px;
   // width: 100%;
   background-color: #a1969e94;
@@ -33,12 +34,14 @@ hr {
 
 .panel-body {
   background-color: rgb(249, 215, 171);
+
   border-radius: 4px;
   width: 50%;
   float: left;
 }
 
 #panel-body {
+
   background-color: rgb(236, 243, 241);
   border-radius: 4px;
   width: 49%;
@@ -54,14 +57,40 @@ hr {
   padding-bottom: 10px;
 }
 
-h3, h2 {
+h3, h2, h1 {
   padding-left: 8px;
   padding-right: 8px;
   text-align: center;
-   text-shadow: 1px 1px 1px rgb(255, 204, 0),
+   text-shadow: 1px 1px 1px blue,
+   2px 1px 1px red,
                2px 2px 1px red;
 }
 
 h6 {
   padding-top: 15px;
 }
+
+blockquote {
+  background: #aed0e2;
+  border-left: 12px solid rgb(63, 89, 234);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  border-radius: 12px;
+}
+blockquote:before {
+  display: inline;
+  color: rgb(243, 110, 110);
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+ cite {
+      color:#c60;
+      display: block;
+      font-style: normal;
+      text-align: right;
+      text-transform:uppercase;
+    }

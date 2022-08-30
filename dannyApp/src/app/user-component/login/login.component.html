@@ -9,12 +9,15 @@
   </div>
 
   <div class="container">
-    <img src="../../../assets/images/login-icon.png" alt="daniel's Logo" style="text-align:center"/>
-    <h2 class="glyphicon glyphicon-log-in text-center"> Sign-In</h2>
-
-    <hr />
+    <br />
+    <h3>Welcome | እንኳን ደህና መጡ!!!</h3>
+    <br />
+    <br />
 
     <div class="panel-body">
+      <h2 class="glyphicon glyphicon-log-in"> Login</h2>
+      <hr />
+
       <h3 style="color: red">{{ loginError }}</h3>
       <form
         [formGroup]="loginForm"
@@ -104,7 +107,7 @@
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1">
             </span>
 
-            Sign In
+            Login
           </button>
 
           <!-- <ng-template #loading> -->
@@ -121,7 +124,16 @@
     </div>
 
     <div id="panel-body">
-      <h3>Welcome | እንኳን ደህና መጡ!!!</h3>
+      <!-- <h3>Welcome | እንኳን ደህና መጡ!!!</h3> -->
+
+      <div class="giant-quotes-quote">
+        <blockquote>
+          <p>
+           “Believe in yourself. You are braver than you think, more talented than you know, and capable of more than you imagine”
+          </p>
+          <cite>Roy T. Bennett</cite>
+        </blockquote>
+      </div>
 
       <img src="../../../assets/images/Login.png" alt="login key" />
     </div>

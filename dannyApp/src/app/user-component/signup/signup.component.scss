@@ -6,7 +6,7 @@ img {
   margin: 0 auto;
   z-index: 9999;
   line-height: 80px;
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .panel-heading {
@@ -18,52 +18,87 @@ img {
 .container {
   margin-top: 100px;
   // width: 100%;
- background-color: #a1969e94;
+  // background-color: #a1969e94;
+  // background-color: #8b5349;
+    background-image: url(../../../assets/images/spaceneedlegreen.png);
+
+  background-color: #ba8c63;
   border: 2px solid rgb(171, 223, 249);
   z-index: 99999;
 }
 
-.panel-body{
+.panel-body {
   background-color: rgb(249, 215, 171);
   border-radius: 4px;
   width: 50%;
   float: left;
 }
 
-h6{
-    padding-top: 15px ;
-
+h6 {
+  padding-top: 15px;
 }
 
-#panel-body{
+#panel-body {
   background-color: rgb(236, 243, 241);
   border-radius: 4px;
-  width : 48%;
+  width: 48%;
   float: right;
-
 }
 
-#panel-body, p, h2{
- padding-left: 10px ;
- padding-right: 10px ;
-
+#panel-body,
+p,
+h2 {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-h2{
-   text-shadow: 1px 1px 1px rgb(255, 204, 0),
-               2px 2px 1px red;
+h2 {
+  text-shadow: 1px 1px 1px rgb(255, 204, 0), 2px 2px 1px red;
 }
 
-#panel-body img{
+#panel-body img {
   width: 100%;
   height: 400%;
- padding-left: 10px ;
- padding-right: 10px ;
- padding-top: 10px ;
- padding-bottom: 10px ;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.btn{
+.btn {
   border-radius: 35px;
 }
 
+blockquote {
+  background: #aed0e2;
+  border-left: 12px solid rgb(63, 89, 234);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  border-radius: 12px;
+}
+blockquote:before {
+  display: inline;
+  color: rgb(243, 110, 110);
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+ cite {
+      color:#c60;
+      display: block;
+      font-style: normal;
+      text-align: right;
+      text-transform:uppercase;
+    }
+
+    h3, h2, h1, h4{
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+   text-shadow: 1px 1px 1px green,
+   2px 1px 1px yellow,
+               2px 2px 1px red;
+}
