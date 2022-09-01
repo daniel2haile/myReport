@@ -17,23 +17,12 @@ const USER_ROUTES: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
 
-  {
-    path: 'userdashboard',
+  { path : 'admindashboard', component : AdminDashboardComponent},
 
-    loadChildren: () =>
-      import('./dashboards/user-dashboard/user-dashboard.module').then(
-        (m) => m.UserDashboardModule
-      ),
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'admindashboard',
-    loadChildren: () =>
-      import('./dashboards/admin-dashboard/admin-dashboard.module').then(
-        (m) => m.AdminDashboardModule
-      ),
-    // canActivate: [AuthGuard],
-  },
+        { path : 'userslist', component : UsersListComponent },
+        { path : 'profile/:id', component : ProfileComponent}
+
+
 ];
 
 @NgModule({

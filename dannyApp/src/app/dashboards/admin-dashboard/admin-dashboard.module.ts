@@ -7,20 +7,20 @@ import { UsersListComponent } from 'src/app/users-list-component/userlist.compon
 import { ProfileComponent } from 'src/app/profile-component/profile.component';
 
 const ADMIN_DASHBOARD_ROUTES: Routes = [
-  {
-    path: 'admindashboard',
-    component: AdminDashboardComponent,
-    children: [
-      {
-        path: 'userslist',
-        component: UsersListComponent,
-        children: [{ path: 'profile/:user_id', component: ProfileComponent }],
-      },
-    ],
-  },
+  // {
+  //   path: 'admindashboard',
+  //   component: AdminDashboardComponent,
+  //   children: [
+  //     {
+  //       path: 'userslist',
+  //       component: UsersListComponent,
+  //       children: [{ path: 'profile/:user_id', component: ProfileComponent }],
+  //     },
+  //   ],
+  // },
   // children: [
   // { path: '', redirectTo: 'admindashboard', pathMatch: 'full' },
-  { path: 'report', component: ReportComponent },
+  // { path: 'report', component: ReportComponent },
 
   // ],
   // },

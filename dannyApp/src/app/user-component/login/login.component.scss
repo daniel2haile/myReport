@@ -16,7 +16,7 @@ img {
 }
 
 .container {
-  background-image: url(../../../assets/images/spaceneedlegreen.png);
+  background-image: url(../../../assets/images/log.png);
   margin-top: 100px;
   // width: 100%;
   background-color: #a1969e94;
@@ -57,13 +57,17 @@ hr {
   padding-bottom: 10px;
 }
 
-h3, h2, h1 {
+h3, h2, h1, marquee {
   padding-left: 8px;
   padding-right: 8px;
   text-align: center;
-   text-shadow: 1px 1px 1px blue,
-   2px 1px 1px red,
+   text-shadow: 1px 1px 1px green,
+   2px 1px 1px yellow,
                2px 2px 1px red;
+}
+
+marquee{
+  font-size: 55px;
 }
 
 h6 {
