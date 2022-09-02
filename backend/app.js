@@ -16,6 +16,12 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads')) //file
 
+//Go live purpose - test it using localhost:8088
+app.use(express.static(path.join(__dirname, 'dist/frontend')))
+app.get('/', (req, res) => {
+    res.send('dist/fontend/index.html')
+})
+
 app.use('/user', userRoutes);
 app.use("/report", reportRoutes);
 
