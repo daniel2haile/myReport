@@ -16,13 +16,16 @@ const USER_ROUTES: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'admindashboard', canActivate: [AuthGuard],component: AdminDashboardComponent },
+  { path: 'userslist', component: UsersListComponent },
+  { path: 'profile/:user_id', component: ProfileComponent },
+  { path: 'report', component: ReportComponent },
 
-  { path : 'admindashboard', component : AdminDashboardComponent},
-
-        { path : 'userslist', component : UsersListComponent },
-        { path : 'profile/:id', component : ProfileComponent}
-
-
+  {
+    path: 'userdashboard',
+    canActivate: [UserGaurdService],
+    component: UserDashboardComponent,
+  },
 ];
 
 @NgModule({

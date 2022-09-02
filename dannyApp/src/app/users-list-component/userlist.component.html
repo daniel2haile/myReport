@@ -1,4 +1,4 @@
- <div class="container">
+<div class="container">
   <!-- <div class="panel-heading ">Users List</div>  -->
   <div class="panel-body">
     <label class="control-label" for="search"> Search</label>&nbsp;
@@ -10,12 +10,15 @@
       placeholder="Search by user's First Name or Last Name..."
       [(ngModel)]="userInput"
     />
-     &nbsp;
+    &nbsp;
     <p>You are searching for user - {{ userInput }}</p>
-    <p>Number of search result : {{ (userslist | myPipe: userInput).length }} out of {{ userslist.length }} total users</p>
+    <p>
+      Number of search result : {{ (userslist | myPipe: userInput).length }} out
+      of {{ userslist.length }} total users
+    </p>
     &nbsp;
     <div *ngIf="(userslist | myPipe: userInput).length === 0">
-      <p   style="color:red;">Bad Request, Search Again!!</p>
+      <p style="color: red">Bad Request, Search Again!!</p>
     </div>
 
     <table class="table table-striped">
@@ -29,7 +32,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of userslist  | myPipe: userInput; let index = index">
+        <tr
+          *ngFor="let user of userslist | myPipe: userInput; let index = index"
+        >
           <th scope="row">{{ index + 1 }}</th>
           <td>{{ user.firstname }}</td>
           <td>{{ user.lastname }}</td>
@@ -44,7 +49,7 @@
       </tbody>
     </table>
 
-    Total users are: {{userslist.length}}
+    Total users are: {{ userslist.length }}
     <!-- <span *ngFor="let user of userslist; let index = index"></span> -->
   </div>
 </div>

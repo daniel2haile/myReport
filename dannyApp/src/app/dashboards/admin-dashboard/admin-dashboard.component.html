@@ -39,11 +39,14 @@
 
   <div class="panel panel-primary">
 <div class="panel-heading">
-  <select>
-    <option><a [routerLink]="['/admindashboard']">Admin dashboard</a></option>
-    <option><a [routerLink]="['/userslist']">Users List</a></option>
-    <option><a [routerLink]="['/admindashboard']">Admin dashboard</a></option>
-  </select>
+<nav>
+  <a [routerLink]="['/admindashboard']">Admin dashboard</a>
+    <a [routerLink]="['/userslist']">Users List</a>
+    <a [routerLink]="['/report']">Report</a>
+    <a [routerLink]="['/logout']">Logout</a>
+</nav>
+
+
 </div>
 
 <div class="panel-body">

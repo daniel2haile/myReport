@@ -20,7 +20,7 @@ img {
   // width: 100%;
   // background-color: #a1969e94;
   // background-color: #8b5349;
-    background-image: url(../../../assets/images/test.png);
+  background-image: url(../../../assets/images/sunset.png);
 
   background-color: #ba8c63;
   border: 2px solid rgb(171, 223, 249);
@@ -86,23 +86,26 @@ blockquote:before {
   vertical-align: -0.4em;
 }
 
- cite {
-      color:#c60;
-      display: block;
-      font-style: normal;
-      text-align: right;
-      text-transform:uppercase;
-    }
+cite {
+  color: #c60;
+  display: block;
+  font-style: normal;
+  text-align: right;
+  text-transform: uppercase;
+}
 
-    h3, h2, h1, h4, marquee{
+h3,
+h2,
+h1,
+h4,
+marquee {
+  // color : goldenrod;
   padding-left: 8px;
   padding-right: 8px;
   text-align: center;
-   text-shadow: 1px 1px 1px green,
-   2px 1px 1px yellow,
-               2px 2px 1px red;
+  text-shadow: 1px 1px 1px green, 2px 1px 1px yellow, 2px 2px 1px red;
 }
 
-marquee{
+marquee {
   font-size: 55px;
 }
