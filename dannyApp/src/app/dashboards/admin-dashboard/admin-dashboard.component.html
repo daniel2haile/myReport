@@ -10,7 +10,7 @@
       LogIn</button
     >&nbsp; -->
 
-     <!-- <button
+<!-- <button
       class="btn btn-warning glyphicon glyphicon-user"
       [routerLink]="['/', 'signup']"
       class="btn btn-info"
@@ -19,7 +19,7 @@
       Sign Up</button
     >&nbsp; -->
 
-    <!-- <button
+<!-- <button
       class="btn btn-danger glyphicon glyphicon-log-out"
       style="cursor: pointer"
       *ngIf="!!loginService.isLoggedIn()"
@@ -30,27 +30,23 @@
     </button>
     </div> -->
 
-    <!-- <div class="panel-body">
+<!-- <div class="panel-body">
  <a [routerLink]="['/userslist']">Users List</a>
   </div>
     </div>
   </div> -->
 
-
-  <div class="panel panel-primary">
-<div class="panel-heading">
-<nav>
-  <a [routerLink]="['/admindashboard']">Admin dashboard</a>
-    <a [routerLink]="['/userslist']">Users List</a>
-    <a [routerLink]="['/report']">Report</a>
-    <a [routerLink]="['/logout']">Logout</a>
-</nav>
-
-
-</div>
-
-<div class="panel-body">
-  <h2> &lt;this is admin dashboard&gt;</h2>
-</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <nav>
+      <a [routerLink]="['/admindashboard']">Admin dashboard</a>
+      <a [routerLink]="['/userslist']">Users List</a>
+      <a [routerLink]="['/report']">Report</a>
+      <a [routerLink]="['/logout']">Logout</a>
+    </nav>
   </div>
 
+  <div class="panel-body">
+    <h2>&lt;this is admin dashboard&gt;</h2>
+  </div>
+</div>
