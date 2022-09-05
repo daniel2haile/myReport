@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="panel-heading">
     <button class="btn btn-success  glyphicon glyphicon-log-in"
      [routerLink]="['/','login']"
@@ -17,5 +17,20 @@
             *ngIf="!!loginService.isLoggedIn()"
             (click)="loginService.logout()">LogOut</button>
   </div>
+</div> -->
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <nav>
+      <a [routerLink]="['/userdashboard']">User dashboard</a>
+      <a [routerLink]="['/report']">Report</a>
+      <a [routerLink]="['/logout']">Logout</a>
+    </nav>
+  </div>
+
+  <div class="panel-body">
+    <h2>&lt;this is User's dashboard&gt;</h2>
+  </div>
 </div>
+
 

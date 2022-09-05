@@ -23,7 +23,7 @@ const USER_ROUTES: Routes = [
 
   {
     path: 'userdashboard',
-    canActivate: [UserGaurdService],
+    // canActivate: [UserGaurdService],
     component: UserDashboardComponent,
   },
 ];
