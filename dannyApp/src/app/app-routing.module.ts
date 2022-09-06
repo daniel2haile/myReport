@@ -16,8 +16,14 @@ const USER_ROUTES: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'admindashboard', canActivate: [AuthGuard],component: AdminDashboardComponent },
-  { path: 'userslist', component: UsersListComponent },
+  {
+    path: 'admindashboard',
+
+    // canActivate: [AuthGuard],
+    component: AdminDashboardComponent,
+    children: [{ path: 'userslist', component: UsersListComponent }],
+  },
+  // { path: 'userslist', component: UsersListComponent },
   { path: 'profile/:user_id', component: ProfileComponent },
   { path: 'report', component: ReportComponent },
 
