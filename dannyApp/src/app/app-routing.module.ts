@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dash
 import { UserDashboardComponent } from './dashboards/user-dashboard/user-dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UserGaurdService } from './guards/user.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile-component/profile.component';
 import { ReportComponent } from './report-component/report.component';
 import { LoginComponent } from './user-component/login/login.component';
@@ -32,6 +33,10 @@ const USER_ROUTES: Routes = [
     // canActivate: [UserGaurdService],
     component: UserDashboardComponent,
   },
+
+  //Wild Card Route for 404 request
+  { path: '**', pathMatch: 'full' ,
+  component: PageNotFoundComponent },
 ];
 
 @NgModule({
