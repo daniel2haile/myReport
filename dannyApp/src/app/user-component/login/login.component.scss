@@ -41,7 +41,6 @@ hr {
 }
 
 #panel-body {
-
   background-color: rgb(236, 243, 241);
   border-radius: 4px;
   width: 49%;
@@ -57,16 +56,17 @@ hr {
   padding-bottom: 10px;
 }
 
-h3, h2, h1, marquee {
+h3,
+h2,
+h1,
+marquee {
   padding-left: 8px;
   padding-right: 8px;
   text-align: center;
-   text-shadow: 1px 1px 1px green,
-   2px 1px 1px yellow,
-               2px 2px 1px red;
+  text-shadow: 1px 1px 1px green, 2px 1px 1px yellow, 2px 2px 1px red;
 }
 
-marquee{
+marquee {
   font-size: 55px;
 }
 
@@ -91,10 +91,10 @@ blockquote:before {
   vertical-align: -0.4em;
 }
 
- cite {
-      color:#c60;
-      display: block;
-      font-style: normal;
-      text-align: right;
-      text-transform:uppercase;
-    }
+cite {
+  color: #c60;
+  display: block;
+  font-style: normal;
+  text-align: right;
+  text-transform: uppercase;
+}

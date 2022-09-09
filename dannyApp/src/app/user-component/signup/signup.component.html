@@ -67,7 +67,7 @@
           }"
         >
           <div class="col-md-12">
-            <label class="control-label" for="lname"> Middle Name</label>
+            <label class="control-label" for="lname"> Middle Name ( initial )</label>
             <input
               class="form-control"
               type="text"
@@ -263,7 +263,7 @@
               class="form-control"
               type="tel"
               id="phone"
-              placeholder="Enter your Phone"
+              placeholder="Enter your Phone Number"
               formControlName="phone"
             />
 
@@ -294,8 +294,10 @@
         >
           <div class="col-md-12">
             <label class="control-label" for="role"> Role</label>&nbsp;
-            <select formControlName="role" id="role" class="form-control">
-              <option disabled>Choose role</option>
+            <select formControlName="role" id="role" class="form-control" >
+               <option value="" disabled selected hidden>
+                Choose a role...
+              </option>
               <option>User</option>
               <option disabled>Admin [taken]</option>
             </select>

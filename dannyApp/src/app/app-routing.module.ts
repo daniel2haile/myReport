@@ -22,7 +22,9 @@ const USER_ROUTES: Routes = [
 
     // canActivate: [AuthGuard],
     component: AdminDashboardComponent,
-    children: [{ path: 'userslist', component: UsersListComponent }],
+    children: [{ path: 'userslist', component: UsersListComponent,
+
+  }],
   },
   // { path: 'userslist', component: UsersListComponent },
   { path: 'profile/:user_id', component: ProfileComponent },
