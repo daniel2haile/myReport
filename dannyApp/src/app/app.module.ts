@@ -25,6 +25,7 @@ import { UserDashboardComponent } from './dashboards/user-dashboard/user-dashboa
 import { AdminDashboardComponent } from './dashboards/admin-dashboard/admin-dashboard.component';
 import { AboutComponent } from './shared-component/about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HelpComponent } from './shared-component/help/help.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AdminDashboardComponent,
     AboutComponent,
     PageNotFoundComponent,
+    HelpComponent,
   ],
 
   imports: [
