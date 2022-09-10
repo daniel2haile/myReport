@@ -12,3 +12,4 @@
      - login | register and logout logics 
          - 1st (Register | Login) when user register => login, only logout will be display. This will be handled 
            on  header component 
+     - help component (shared-component/help) - implement both backend and frontend

@@ -22,7 +22,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
  this.subscription = this.userService.getProfile()
  .subscribe((res : any) => {
   this.userslist = res.users
-  console.log('usersList',res)
+  console.log('usersList', res)
  })
   }
 
