@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-help',
   templateUrl: './help.component.html',
-  styleUrls: ['./help.component.scss']
+  styleUrls: ['./help.component.scss'],
 })
 export class HelpComponent implements OnInit {
+  helpForm!: FormGroup;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onSubmit(){
+    
   }
-
 }

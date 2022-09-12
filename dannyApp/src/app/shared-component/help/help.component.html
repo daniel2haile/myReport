@@ -1,1 +1,27 @@
-<p>help works!</p>
+<div class="panel panel-primary">
+  <div class="panel-heading text-center">Help Center</div>
+  <div class="panel-body">
+    <form
+    [formGroup]="helpForm"
+    (ngSubmit)="onSubmit()"
+    class="form-horizontal"
+    >
+
+     <div class="col-md-12">
+      <label for="name"></label>
+<input type="text" placeholder="Enter your full name" id=name formControlName=fullname/>
+     </div>
+
+
+
+      <input type="email" placeholder="Enter your email" />
+
+      <textarea
+        type="text"
+        placeholder="Please enter your your questions here..."
+      ></textarea>
+
+      <button class="btn btn-danger btn-block">Submit your request</button>
+    </form>
+  </div>
+</div>
