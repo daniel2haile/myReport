@@ -9,6 +9,7 @@ import { UserGaurdService } from './guards/user.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile-component/profile.component';
 import { ReportComponent } from './report-component/report.component';
+import { HelpComponent } from './shared-component/help/help.component';
 import { LoginComponent } from './user-component/login/login.component';
 import { SignupComponent } from './user-component/signup/signup.component';
 import { UsersListComponent } from './users-list-component/userlist.component';
@@ -26,9 +27,10 @@ const USER_ROUTES: Routes = [
 
   }],
   },
-  // { path: 'userslist', component: UsersListComponent },
+  { path: 'userslist', component: UsersListComponent },
   { path: 'profile/:user_id', component: ProfileComponent },
   { path: 'report', component: ReportComponent },
+  { path : 'help', component: HelpComponent},
 
   {
     path: 'userdashboard',
