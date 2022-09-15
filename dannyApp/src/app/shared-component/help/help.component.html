@@ -2,24 +2,33 @@
   <div class="panel-heading text-center">Help Center</div>
   <div class="panel-body">
     <form
-    [formGroup]="helpForm"
-    (ngSubmit)="onSubmit()"
-    class="form-horizontal"
+      [formGroup]="helpForm"
+      (ngSubmit)="onSubmit()"
+      class="form-horizontal"
     >
+      <div class="col-md-12">
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          placeholder="Enter your full name"
+          id="name"
+          formControlName="fullname"
+        />
+      </div>
 
-     <div class="col-md-12">
-      <label for="name"></label>
-<input type="text" placeholder="Enter your full name" id=name formControlName=fullname/>
-     </div>
-
-
-
+      <div class="col-md-12">
+        <label for="email">Enter Email</label>
       <input type="email" placeholder="Enter your email" />
+      </div>
 
+      <div class="col-md-12">
+        <label for="question"> Leave Your Questions Here...</label>
       <textarea
         type="text"
+        id="question"
         placeholder="Please enter your your questions here..."
       ></textarea>
+      </div>
 
       <button class="btn btn-danger btn-block">Submit your request</button>
     </form>
