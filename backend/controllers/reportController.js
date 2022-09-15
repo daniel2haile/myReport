@@ -23,7 +23,6 @@ var upload = multer({
   limits: { fileSize: 1024 * 1024 * 5 },
 }).single("file");
 
-// var multipleUpload = multer({ storage: storage }).array("files");
 
 exports.createReport = (req, res) => {
   upload(req, res, function (err) {
