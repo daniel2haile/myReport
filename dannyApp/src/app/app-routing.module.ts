@@ -9,6 +9,7 @@ import { UserGaurdService } from './guards/user.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile-component/profile.component';
 import { ReportComponent } from './report-component/report.component';
+import { AboutComponent } from './shared-component/about/about.component';
 import { HelpComponent } from './shared-component/help/help.component';
 import { LoginComponent } from './user-component/login/login.component';
 import { SignupComponent } from './user-component/signup/signup.component';
@@ -23,10 +24,8 @@ const USER_ROUTES: Routes = [
 
     // canActivate: [AuthGuard],
     component: AdminDashboardComponent,
-    children: [{ path: 'userslist', component: UsersListComponent,
-
-  }],
   },
+  { path : 'about', component: AboutComponent },
   { path: 'userslist', component: UsersListComponent },
   { path: 'profile/:user_id', component: ProfileComponent },
   { path: 'report', component: ReportComponent },
