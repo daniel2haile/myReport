@@ -2,8 +2,19 @@
 
 <!-- <div class="container"> -->
 
-    <!-- <app-header></app-header> -->
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
+<!-- <app-header></app-header> -->
+
+<hr />
+<a
+
+  class="btn btn-danger"
+  style="cursor: pointer"
+  *ngIf="loginService.isLoggedIn()"
+  (click)="loginService.logout()"
+  >Logout</a
+>
+<br />
+<router-outlet></router-outlet>
+<app-footer></app-footer>
 
 <!-- </div> -->
